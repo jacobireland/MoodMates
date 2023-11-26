@@ -72,7 +72,6 @@ const styles = StyleSheet.create({
 		shadowOpacity: 1,
 		shadowRadius: 10,
 		shadowOffset: {width: 0, height: 0},
-		opacity: 0.5
 	},
 
 	sliderText: {

@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, View, Image, } from 'react-native';
 import styles from '../style';
 import Slider from "react-native-sliders";
-//import Slider from "@react-native-community/slider";
 import anxiety0 from '../assets/anxiety1.png';
 import anxiety1 from '../assets/anxiety2.png';
 import anxiety2 from '../assets/anxiety3.png';
@@ -16,7 +15,7 @@ import anxiety8 from '../assets/anxiety9.png';
 
 const Mood = () => {
 
-	const [anxiety, setAnxiety] = React.useState(anxiety5)
+	const [anxiety, setAnxiety] = React.useState(anxiety)
 
 	const [happiness, setHappiness] = React.useState('#FFEBB5')
 
@@ -127,6 +126,7 @@ const Mood = () => {
 
 	return (
 	<View>
+		<View>
 		<View style={styles.moodIcon}>
 			
 			<View style={[styles.energyLevel, happinessColor]}></View>
@@ -136,6 +136,7 @@ const Mood = () => {
 			source={anxiety}
 			/>
 		</View>
+	</View>
 
 		<Text style={styles.sliderText}>Happiness</Text>
 		<Slider
