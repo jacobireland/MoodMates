@@ -48,17 +48,30 @@ const styles = StyleSheet.create({
 	},
 
 	moodIcon: {
+		width: '100%',
+		height: 120,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+
+	anxietyLevel: {
 		width: 100,
 		height: 100,
-		borderRadius: 50,
-		backgroundColor: 'black',
-		shadowColor: 'black',
-		alignSelf: 'center',
-		marginBottom: 20,
-		shadowOpacity: 0.9,
-		shadowRadius: 25,
+		margin: 'auto',
+		tintColor: '#97E384',
+	},
 
-
+	energyLevel: {
+		width: 81,
+		height: 81,
+		borderRadius: 81/2,
+		backgroundColor: '#97E384',
+		position: 'absolute',
+		margin: 'auto',
+		shadowColor: '#97E384',
+		shadowOpacity: 1,
+		shadowRadius: 10,
+		shadowOffset: {width: 0, height: 0},
 	},
 
 	sliderText: {
