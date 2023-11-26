@@ -44,12 +44,21 @@ const styles = StyleSheet.create({
 
 	feelingQuestion: {
 		fontSize: 18,
-		marginBottom: 30,
+		marginBottom: 8,
+		marginTop: 20,
+	},
+
+	moodIconContainer: {
+		width: '100%',
+		height: 120,
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 
 	moodIcon: {
-		width: '100%',
-		height: 120,
+		width: 110,
+		height: 110,
+		borderRadius: 55,
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
@@ -79,12 +88,12 @@ const styles = StyleSheet.create({
 		marginTop: 15
 	},
 
-	diaryEntry: {
-		backgroundColor: '#ffffff',
+	diaryBox: {
+		width: '100%',
 		height: 160,
-		marginTop: 30,
-		borderRadius: 6,
-		alignItems: 'flex-end',
+		borderRadius: 4,
+		backgroundColor: 'white',
+		alignItems: 'flex-start',
 	},
 
 
@@ -117,8 +126,33 @@ const styles = StyleSheet.create({
 		height: 65,
 		width: 1,
 		backgroundColor: '#8BC7AF',
-	}
+	},
 
+	modalContainer: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginBottom: 200,
+		backgroundColor: 'rgba(0, 0, 0, 0.5)',
+	  },
+	  modalContent: {
+		backgroundColor: 'white',
+		padding: 10,
+		borderRadius: 8,
+		width: 340,
+	  },
+	
+	  textInput: {
+		height: 160,
+		borderColor: 'gray',
+		borderWidth: 1,
+		marginBottom: 0,
+		paddingHorizontal: 5,
+	  },
+	  buttonContainer: {
+		flexDirection: 'row',
+		justifyContent: 'space-around',
+	  },
 
 
 })

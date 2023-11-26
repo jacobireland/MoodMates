@@ -1,65 +1,55 @@
 import React from 'react';
-import { Text, View, Image, TextInput } from 'react-native';
+import { View, TextInput, Button, Text } from 'react-native';
 import styles from './style';
-import profileIcon from './assets/profileIcon.png';
 import Mood from './components/mood';
+import NavBar from './components/navBar';
+import Greeting from './components/greeting';
+import DiaryEntry from './components/diaryEntry';
 
 const App = () => {
 
- 	const [number, onChangeNumber] = React.useState('');
+	const [modalVisible, setModalVisible] = React.useState(false);
+	const [enteredText, setEnteredText] = React.useState('Today I feel...');
+
+	const handleSaveText = (text) => {
+		setEnteredText(text);}
 
 	return (
 	<View style={styles.container}>
 		<View style={styles.appContent}>
 
-			<View style={styles.greeting}>
-
-				<View style={styles.greetingProfile}>
-					<Text style={styles.greetingText}>Good Morning,</Text>
-					<Image
-					style={styles.profileIcon}
-					source={profileIcon}
-					/>
-				
-				</View>
-				<Text style={styles.greetingName}>Andrea!</Text>
-			</View>
+			{/* Component for our greeting message,
+			defined in the greeting.js file in ../components */}
+			<Greeting/>
 
 			<View style={styles.feelingToday}>
 
-				<Text style={styles.feelingQuestion}>How are you feeling today?</Text>
-
+				{/* Component for our mood icon and sliders,
+				defined in the mood.js file in ../components */}
 				<Mood/>
 				
 			</View>
 
-			<TextInput
-				style={styles.diaryEntry}
-				onChangeText={onChangeNumber}
-				value={number}
-				placeholder="useless placeholder"
-			/>
+
+			<View style={styles.diaryBox}>
+				<Button
+					title={enteredText}
+					onPress={() => setModalVisible(true)}
+				/>
+				<DiaryEntry
+					visible={modalVisible}
+					onClose={() => setModalVisible(false)}
+					onSave={handleSaveText}
+				/>
+			</View>
 
 
 		</View>
-
-		<View style={styles.navBar}>
-			<View style={styles.navButtonContainer}>
-				<Text style={styles.buttonText}>Mood</Text>
-			</View>
-			<View style={styles.separator}></View>
-
-			<View style={styles.navButtonContainer}>
-				<Text style={styles.buttonText}>Groups</Text>
-			</View>
-			<View style={styles.separator}></View>
-
-			<View style={styles.navButtonContainer}>
-				<Text style={styles.buttonText}>Activities</Text>
-			</View>
-			<View style={styles.separator}></View>
-
-		</View>
+		
+		{/* Component for our nav bar,
+		defined in the navBar.js file in ../components */}
+		<NavBar/>
+		
 	</View>
 		
 )}

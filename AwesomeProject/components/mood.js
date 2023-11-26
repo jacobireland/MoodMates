@@ -11,29 +11,22 @@ import anxiety5 from '../assets/anxiety6.png';
 import anxiety6 from '../assets/anxiety7.png';
 import anxiety7 from '../assets/anxiety8.png';
 import anxiety8 from '../assets/anxiety9.png';
-
+import MoodIcon from './moodIcon';
 
 const Mood = () => {
 
-	const [anxiety, setAnxiety] = React.useState(anxiety)
+	/*define three variables, and their initial states,
+	we call the 'set...' functions to update the states of the variables
+	and in turn modify the glowing mood orb*/
+
+	const [anxiety, setAnxiety] = React.useState(anxiety4)
 
 	const [happiness, setHappiness] = React.useState('#FFEBB5')
 
 	const [energy, setEnergy] = React.useState(0.7)
 
-	var anxietyColor = {
-		tintColor: happiness,
-		opacity: energy
-	}
 
-	var happinessColor = {
-		backgroundColor: happiness,
-		shadowColor: happiness,
-		opacity: energy,
-		shadowOpacity: energy
-	}
-
-
+	//takes the value of the happiness slider and sets the HEX color
 	function happinessSetter(value) {
 		if (value == 0) {
 			setHappiness('#FF7480')
@@ -64,6 +57,7 @@ const Mood = () => {
 		}
 	}
 
+	//takes the value of the energy slider and sets the energy value
 	function energySetter(value) {
 		if (value == 0) {
 			setEnergy(0.4)
@@ -94,6 +88,7 @@ const Mood = () => {
 		}
 	}
 
+	//takes the value of the anxiety slider and sets the image for anxiety squiggles
 	function anxietySetter(value) {
 		if (value == 0) {
 			setAnxiety(anxiety0)
@@ -126,19 +121,22 @@ const Mood = () => {
 
 	return (
 	<View>
-		<View>
-		<View style={styles.moodIcon}>
-			
-			<View style={[styles.energyLevel, happinessColor]}></View>
-			
-			<Image
-			style={[styles.anxietyLevel, anxietyColor]}
-			source={anxiety}
-			/>
+
+		<View style={styles.moodIconContainer}>
+		
+			{/* component used for our 'glowing orb,
+			defined in './components/moodIcon.js
+			we can use this component for any place in our app that needs to
+			show the users glowing orb mood*/}
+			<MoodIcon happiness={happiness} energy={energy} anxiety={anxiety}/>
+		
 		</View>
-	</View>
 
 		<Text style={styles.sliderText}>Happiness</Text>
+
+		{/* as the user moves the slider,
+		call the function happinessSetter with the current value of the slider
+		to change the glowing orb to match their mood*/}
 		<Slider
 		onValueChange={value => happinessSetter(value)}
 		onSlidingComplete={value => happinessSetter(value)}
@@ -165,6 +163,7 @@ const Mood = () => {
 		/>
 
 		<Text style={styles.sliderText}>Energy</Text>
+
 		<Slider
 		onValueChange={value => energySetter(value)}
 		onSlidingComplete={value => energySetter(value)}
