@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native'
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#F4EFE6',
+		backgroundColor: '#6E6E6E',
 	},
 
 	appContent: {
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 		width: 100,
 		height: 100,
 		margin: 'auto',
-		tintColor: '#97E384',
+		
 	},
 
 	energyLevel: {
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
 		shadowOpacity: 1,
 		shadowRadius: 10,
 		shadowOffset: {width: 0, height: 0},
+		opacity: 0.5
 	},
 
 	sliderText: {
