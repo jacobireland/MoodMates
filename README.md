@@ -49,7 +49,7 @@ files for guidance
 5) Create a stylesheet for your page. Create a new file in the components folder and give it a name. In your
 app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3.
 
-6) Go to App.js, and replace <MoodIcon/> with <SOME_NAME/>
+6) Go to App.js, and replace "<MoodIcon/>" with <SOME_NAME/>
 
 7) Run 'npx expo start' and begin adding code to your SOME_NAME.js file and styling it
 in your STYLE_SHEET_NAME.js file. As you add code and save your changes, you will see it
