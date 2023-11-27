@@ -1,53 +1,37 @@
 import React from 'react';
-import { View, TextInput, Button, Text } from 'react-native';
+import { View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
 import styles from './style';
 import Mood from './components/mood';
 import NavBar from './components/navBar';
 import Greeting from './components/greeting';
 import DiaryEntry from './components/diaryEntry';
+import MoodPage from './components/moodPage';
+
+
+/** This is the backbone code for our app.
+	The NavBar will be on every page.
+	We can code each page as its own component (look at MoodPage for example), 
+	and then use functions to call that component/page based on buttons pressed in the app.
+	When a certain page needs to be shown, it will be placed in the
+	appContent element (like how MoodPage is right now) and that will
+	make it visible to users */
+
 
 const App = () => {
 
-	const [modalVisible, setModalVisible] = React.useState(false);
-	const [enteredText, setEnteredText] = React.useState('Today I feel...');
-
-	const handleSaveText = (text) => {
-		setEnteredText(text);}
-
 	return (
-	<View style={styles.container}>
-		<View style={styles.appContent}>
+	
+		<View style={styles.container}>
+			<View style={styles.appContent}>
 
-			{/* Component for our greeting message,
-			defined in the greeting.js file in ../components */}
-			<Greeting/>
+				{/* The component for the Mood page of the app,
+				defined in /components/moodPage.js */}
+				<MoodPage/>
 
-			<View style={styles.feelingToday}>
-
-				{/* Component for our mood icon and sliders,
-				defined in the mood.js file in ../components */}
-				<Mood/>
-				
 			</View>
-
-
-			<View style={styles.diaryBox}>
-				<Button
-					title={enteredText}
-					onPress={() => setModalVisible(true)}
-				/>
-				<DiaryEntry
-					visible={modalVisible}
-					onClose={() => setModalVisible(false)}
-					onSave={handleSaveText}
-				/>
-			</View>
-
-
-		</View>
 		
 		{/* Component for our nav bar,
-		defined in the navBar.js file in ../components */}
+		defined in /components/navBar.js */}
 		<NavBar/>
 		
 	</View>

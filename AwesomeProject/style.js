@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native'
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#6E6E6E',
+		backgroundColor: 'lightgray',
 	},
 
 	appContent: {
@@ -25,7 +25,14 @@ const styles = StyleSheet.create({
 
 	greetingText: {
 		fontSize: 32,
-		paddingRight: 109,
+	},
+
+	greetingWordContainer: {
+		flex: 1,
+	},
+
+	greetingWord: {
+		fontSize: 32,
 	},
 
 	profileIcon: {
@@ -94,6 +101,48 @@ const styles = StyleSheet.create({
 		borderRadius: 4,
 		backgroundColor: 'white',
 		alignItems: 'flex-start',
+		marginTop: 32
+	},
+
+	diaryOpen: {
+		width: '100%',
+		height: 160,
+		borderRadius: 4,
+	},
+
+	diaryText: {
+		marginTop: 5,
+		marginLeft: 5,
+		marginBottom: 5,
+		marginRight: 5
+	},
+
+	modalContainer: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: 'rgba(0, 0, 0, 0.5)',
+	},
+
+	modalContent: {
+		backgroundColor: 'white',
+		padding: 10,
+		borderRadius: 8,
+		width: 340,
+		marginBottom: 100
+	},
+	
+	textInput: {
+		height: 160,
+		borderColor: 'gray',
+		borderWidth: 1,
+		marginBottom: 10,
+		paddingHorizontal: 5,
+	},
+	
+	buttonContainer: {
+		flexDirection: 'row',
+		justifyContent: 'space-around',
 	},
 
 
@@ -127,32 +176,6 @@ const styles = StyleSheet.create({
 		width: 1,
 		backgroundColor: '#8BC7AF',
 	},
-
-	modalContainer: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		marginBottom: 200,
-		backgroundColor: 'rgba(0, 0, 0, 0.5)',
-	  },
-	  modalContent: {
-		backgroundColor: 'white',
-		padding: 10,
-		borderRadius: 8,
-		width: 340,
-	  },
-	
-	  textInput: {
-		height: 160,
-		borderColor: 'gray',
-		borderWidth: 1,
-		marginBottom: 0,
-		paddingHorizontal: 5,
-	  },
-	  buttonContainer: {
-		flexDirection: 'row',
-		justifyContent: 'space-around',
-	  },
 
 
 })
