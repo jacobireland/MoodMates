@@ -36,7 +36,7 @@ import styles from './STYLE_SHEET_NAME.js;
 const SOME_NAME = () => {
 
 	return (
-		<View><View/>
+		<View></View>
 
 )}
 
