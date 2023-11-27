@@ -9,7 +9,7 @@ Getting Started:
 
 3) run "npx install expo" and "npm i --save react-native-sliders"
 
-4) download expo go app on your phone
+4) download expo go app on your phone (make sure phone and computer are connected to the same wifi network)
 
 5) run "npx expo start"
 
