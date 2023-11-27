@@ -24,8 +24,9 @@ const App = () => {
 		<View style={styles.container}>
 			<View style={styles.appContent}>
 
-				{/* The component for the Mood page of the app,
-				defined in /components/moodPage.js */}
+				{/* replace this with your page export
+				i.e.: <your_page_export_name/> to be able to see your
+				code in the Expo Go app */}
 				<MoodPage/>
 
 			</View>
