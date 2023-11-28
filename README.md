@@ -66,6 +66,10 @@ Sources:
 
 For creating pop-up modal to enter diary text: https://blog.logrocket.com/creating-a-pop-up-modal-in-react-native/
 
+For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sliders
+
+
+
 
 
 
