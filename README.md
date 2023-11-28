@@ -44,7 +44,8 @@ export default SOME_NAME;
 
 
 All of your code can be written in the return () statement. Look at my other
-files for guidance
+files for guidance.
+Make sure SOME_NAME begins with a capitol letter!!! It has to.
 
 5) Create a stylesheet for your page. Create a new file in the components folder and give it a name. In your
 app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3. Paste the following into
