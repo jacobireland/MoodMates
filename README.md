@@ -64,6 +64,8 @@ copy and paste your two files into the components folder, and commit/push. That'
 
 Sources:
 
+For many things: https://reactnative.dev/docs/components-and-apis
+
 For creating pop-up modal to enter diary text: https://blog.logrocket.com/creating-a-pop-up-modal-in-react-native/
 
 For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sliders
