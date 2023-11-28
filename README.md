@@ -47,15 +47,23 @@ All of your code can be written in the return () statement. Look at my other
 files for guidance
 
 5) Create a stylesheet for your page. Create a new file in the components folder and give it a name. In your
-app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3.
+app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3. Paste the following into
+your stylesheet:
 
-6) Go to App.js, and replace "<MoodIcon/>" with <SOME_NAME/>
+import {StyleSheet} from 'react-native'
 
-7) Run 'npx expo start' and begin adding code to your SOME_NAME.js file and styling it
+const styles = StyleSheet.create({
+})
+
+All of your code can go in between the brackets (look at styles.js in main folder for reference).
+
+7) Go to App.js, and replace "<MoodIcon/>" with <SOME_NAME/>
+
+8) Run 'npx expo start' and begin adding code to your SOME_NAME.js file and styling it
 in your STYLE_SHEET_NAME.js file. As you add code and save your changes, you will see it
 appear in the Expo Go app!
 
-8) When you have completely finished coding a page (statically), switch to the master branch,
+9) When you have completely finished coding a page (statically), switch to the master branch,
 copy and paste your two files into the components folder, and commit/push. That's it!
 
 
