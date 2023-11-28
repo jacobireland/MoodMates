@@ -1,18 +1,15 @@
 # UI-Proj
 UI Design Fall '23 Semester Project
 
-I figured we can now all clone this repo and work on different parts of the code locally, then push changes here.
-We shoulds probs each make our own branch and work in that, then push everything to master.
-
 Getting Started:
 
 1) clone the git repo
 
 2) cd to AwesomeProject
 
-3) run "npx install expo" and "npm i --save react-native-sliders"
+3) run "npx install expo" and "npm i --save react-native-sliders" and "npx expo install expo-blur"
 
-4) download expo go app on your phone
+4) download expo go app on your phone (make sure phone and computer are connected to the same wifi network)
 
 5) run "npx expo start"
 
@@ -39,7 +36,7 @@ import styles from './STYLE_SHEET_NAME.js;
 const SOME_NAME = () => {
 
 	return (
-		<View><View/>
+		<View></View>
 
 )}
 
@@ -47,21 +44,47 @@ export default SOME_NAME;
 
 
 All of your code can be written in the return () statement. Look at my other
-files for guidance
+files for guidance.
+Make sure SOME_NAME begins with a capitol letter!!! It has to.
 
 5) Create a stylesheet for your page. Create a new file in the components folder and give it a name. In your
-app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3.
+app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3. Paste the following into
+your stylesheet:
 
-6) Go to App.js, and replace <MoodIcon/> with <SOME_NAME/>
 
-7) Run 'npx expo start' and begin adding code to your SOME_NAME.js file and styling it
+import {StyleSheet} from 'react-native'
+
+const styles = StyleSheet.create({
+})
+
+export default styles;
+
+
+All of your code can go in between the brackets (look at styles.js in main folder for reference).
+
+7) Go to App.js, and replace "<MoodIcon/>" with <SOME_NAME/>
+
+8) Run 'npx expo start' and begin adding code to your SOME_NAME.js file and styling it
 in your STYLE_SHEET_NAME.js file. As you add code and save your changes, you will see it
 appear in the Expo Go app!
 
-8) When you have completely finished coding a page (statically), switch to the master branch,
+9) When you have completely finished coding a page (statically), switch to the master branch,
 copy and paste your two files into the components folder, and commit/push. That's it!
 
 
 ** if something isnt working or you're unable to run the app or something let me know pls!
+
+
+Sources:
+
+For many things: https://reactnative.dev/docs/components-and-apis
+
+For creating pop-up modal to enter diary text: https://blog.logrocket.com/creating-a-pop-up-modal-in-react-native/
+
+For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sliders
+
+
+
+
 
 

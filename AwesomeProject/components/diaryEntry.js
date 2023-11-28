@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, Modal, TextInput, Button, StyleSheet } from 'react-native';
 import styles from '../style';
+import { BlurView } from 'expo-blur';
 
 const DiaryEntry = ({ visible, onClose, onSave }) => {
-	const [text, setText] = useState('Today I feel...');
+	const [text, setText] = useState('');
 
 	const handleSave = () => {
-	onSave(text);
+	onSave(determineText(text));
 	setText(text);
 	onClose();
 	};
+
+	function determineText(userText) {
+		if (userText == "" || /^[ ]*$/.test(userText)) {
+			return "Today I'm feeling..."
+		}
+		else {
+			return userText
+		}
+	}
 
 	React.useEffect(() => {
 		if (visible) {
@@ -26,21 +36,23 @@ const DiaryEntry = ({ visible, onClose, onSave }) => {
 			visible={visible}
 			onRequestClose={onClose}
 			>
-			<View style={styles.modalContainer}>
+			<BlurView intensity={10} style={styles.modalContainer}>
 				<View style={styles.modalContent}>
-					<TextInput
-						style={styles.textInput}
-						onChangeText={(value) => setText(value)}
-						value={text}
-						multiline
-						ref={inputRef}
-					/>
+					<View>
+						<TextInput
+							style={styles.textInput}
+							onChangeText={(value) => setText(value)}
+							value={text}
+							multiline
+							ref={inputRef}
+						/>
+					</View>
 					<View style={styles.buttonContainer}>
 						<Button title="Cancel" color={'black'} onPress={onClose} />
 						<Button title="Save Entry" color={'black'} onPress={handleSave} />
 					</View>
 				</View>
-			</View>
+			</BlurView>
 		</Modal>
   );
 };

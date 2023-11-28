@@ -121,32 +121,30 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: 'rgba(0, 0, 0, 0.5)',
 	},
 
 	modalContent: {
 		backgroundColor: 'white',
-		padding: 10,
-		borderRadius: 8,
 		width: 340,
-		marginBottom: 100
+		height: 260,
+		borderRadius: 5,
+		padding: 10,
+		marginBottom: 100,
 	},
 	
 	textInput: {
-		height: 160,
+		height: 185,
 		borderColor: 'gray',
 		borderWidth: 1,
-		marginBottom: 10,
 		paddingHorizontal: 5,
+		borderRadius: 5,
 	},
 	
 	buttonContainer: {
+		marginTop: 12,
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 	},
-
-
-
 
 	navBar: {
 		margin: 'auto',
@@ -154,7 +152,7 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 		alignItems: 'center',
 		width: '100%',
-		height: 65,
+		height: 70,
 		flexDirection: 'row',
 	},
 
