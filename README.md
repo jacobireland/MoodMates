@@ -51,10 +51,14 @@ Make sure SOME_NAME begins with a capitol letter!!! It has to.
 app page .js file, the name of this stylesheet file should replace STYLE_SHEET_NAME on line 3. Paste the following into
 your stylesheet:
 
+
 import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
 })
+
+export default styles;
+
 
 All of your code can go in between the brackets (look at styles.js in main folder for reference).
 
