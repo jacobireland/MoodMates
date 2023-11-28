@@ -62,3 +62,10 @@ copy and paste your two files into the components folder, and commit/push. That'
 ** if something isnt working or you're unable to run the app or something let me know pls!
 
 
+Sources:
+
+For creating pop-up modal to enter diary text: https://blog.logrocket.com/creating-a-pop-up-modal-in-react-native/
+
+
+
+
