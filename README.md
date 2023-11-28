@@ -10,7 +10,7 @@ Getting Started:
 
 2) cd to AwesomeProject
 
-3) run "npx install expo" and "npm i --save react-native-sliders"
+3) run "npx install expo" and "npm i --save react-native-sliders" and "npx expo install expo-blur"
 
 4) download expo go app on your phone
 
