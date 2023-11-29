@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 		height: 60,
 		width: '100%',
 		flexDirection: 'row',
-		marginBottom: 20,
+		marginBottom: 35,
 		justifyContent: 'center',
 	},
 
@@ -62,112 +62,64 @@ const styles = StyleSheet.create({
 
 	firstRowContainer: {
 		flexDirection: 'row',
+		marginBottom: 25
 	},
 
 	timeDateContainer: {
 		height: 80,
 		alignItems: 'flex-start',
 		width: 140,
-		marginBottom: 50,
-		backgroundColor: 'gray',
 	},
 
 	timeDateBox: {
 		flexDirection: 'row',
-		marginBottom: 10
+		marginBottom: 30
+	},
+
+	textTime: {
+		fontSize: 18,
+		marginRight: 18
+	},
+
+	textDate: {
+		fontSize: 18,
+		marginRight: 20
 	},
 
 	proposedByContainer: {
 		width: 160,
 		alignItems: 'center',
-		backgroundColor: 'gray'
+		marginLeft: 20
 	},
 
-	textView: {
-		borderColor: 'black',
-		borderWidth: 1,
-		borderRadius: 4,
-		height: 40,
-		flex: 1,
-		justifyContent: 'center',
-		padding: 4,
-		marginLeft: 30
+	moodContainer: {
+		marginTop: 5,
+		marginBottom: 0
 	},
 
-	loctextView: {
-		borderColor: 'black',
-		borderWidth: 1,
-		borderRadius: 4,
-		height: 40,
-		flex: 1,
-		justifyContent: 'center',
-		padding: 4,
-		marginLeft: 21
-	},
-
-	timetextView: {
-		height: 40,
-		flex: 1,
-		justifyContent: 'flex-start',
-		alignItems: 'center',
+	locationContainer: {
 		flexDirection: 'row',
-		marginLeft: 40,
+		marginBottom: 30
 	},
 
-	dateContainer: {
-		marginLeft: 15,
-		justifyContent: 'center',
-		alignItems: 'flex-start',
-		height: 35,
-		width: 112,
-		borderRadius: 8,
-		backgroundColor: '#eeeeef',
-		paddingLeft: 10
-	},
-
-	notesContainer: {
-		flexDirection: 'row',
-		height: 100,
-		alignItems: 'stretch',
-		marginBottom: 32,
-		width: '100%',
-	},
-
-
-	notestextView: {
-		borderColor: 'black',
-		borderWidth: 1,
-		borderRadius: 4,
-		height: 40,
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'flex-start',
-		marginLeft: 41,
-		padding: 4,
-		height: '100%'
-	},
-
-	sendProposal: {
-		width: 130,
-		height: '100%',
-		justifyContent: 'center',
-		alignItems: 'center',
-		borderColor: 'black',
-		borderWidth: 1,
-		borderRadius: 4,
-		backgroundColor: '#8BC7AF',
-	},
-
-	sendContainer: {
-		height: 30,
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-
-	sendText: {
+	textLocation: {
+		marginRight: 20,
 		fontSize: 18
 	},
 
+	attendeesBox: {
+		flexDirection: 'row',
+		marginTop: 10
+	},
+
+	attendees: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		marginRight: 20
+	}
+
+
+	
 })
 
 export default styles;
