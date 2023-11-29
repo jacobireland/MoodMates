@@ -63,16 +63,11 @@ const styles = StyleSheet.create({
 	},
 
 	moodIcon: {
-		width: 110,
-		height: 110,
-		borderRadius: 55,
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
 
 	anxietyLevel: {
-		width: 100,
-		height: 100,
 		margin: 'auto',
 		
 	},

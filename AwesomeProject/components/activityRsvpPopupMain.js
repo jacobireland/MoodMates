@@ -1,23 +1,22 @@
 import React, {useState} from 'react';
 import { Text, View, TextInput, Image, TouchableOpacity, Modal } from 'react-native';
-import styles from './proposalPopupStyles';
-import ProposalPopup from './proposalPopup';
+import styles from './activityRsvpPopupStyles';
+import ActivityRsvpPopup from './activityRsvpPopup';
 
 
-const ProposalPopupMain = () => {
+const ActivityRsvpPopupMain = () => {
 
 	const [modalVisible, setModalVisible] = React.useState(false);
 
 	return (
 		<View style={styles.modalContainer}>
-				<TouchableOpacity style={styles.proposeActivity}
+				<TouchableOpacity style={styles.rsvpActivity}
 				onPress={() => setModalVisible(true)}>
 					<Text
-						style={styles.diaryText}
-					>Propose Activity
+					>Activity RSVP
 					</Text>
 				</TouchableOpacity>
-				<ProposalPopup
+				<ActivityRsvpPopup
 					visible={modalVisible}
 					onClose={() => setModalVisible(false)}
 				/>
@@ -25,4 +24,4 @@ const ProposalPopupMain = () => {
 
 )}
 
-export default ProposalPopupMain;
+export default ActivityRsvpPopupMain;
