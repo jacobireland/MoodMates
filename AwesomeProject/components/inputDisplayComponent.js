@@ -5,12 +5,10 @@ const InputDisplayComponent = () => {
 
 	const [flaskData, setFlaskData] = useState('');
 
-	const flaskUrl = 'http://localhost:5000/';
-
 	const fetchDataFromFlask = async () => {
 		try {
 		// Make a GET request to Flask endpoint
-		const response = await fetch("http://10.206.53.165:5000/api/get_data");
+		const response = await fetch("http://localhost:5000/api/get_data");
 		
 		// Check if the response is successful (status code 2xx)
 		if (response.ok) {
@@ -22,7 +20,6 @@ const InputDisplayComponent = () => {
 		} catch (error) {
 		console.error('Error fetching data from Flask:', error);
 		}
-		fetch().then().catch(err => console.log(err))
 	};
 
 	useEffect(() => {
