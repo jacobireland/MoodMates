@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 
 	proPopupContainer: {
 		width: 355,
-		height: 470,
+		height: 510,
 		backgroundColor: 'white',
 		borderRadius: 10,
 	},
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 
 	locationContainer: {
 		flexDirection: 'row',
-		marginBottom: 30
+		marginBottom: 25
 	},
 
 	textLocation: {
@@ -107,15 +107,53 @@ const styles = StyleSheet.create({
 		fontSize: 18
 	},
 
+	attendeesContainer: {
+		marginBottom: 15,
+	},
+
 	attendeesBox: {
 		flexDirection: 'row',
-		marginTop: 10
+		marginTop: 5,
+		paddingTop: 7,
+		paddingLeft: 4,
+		paddingBottom: 5
 	},
 
 	attendees: {
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginRight: 20
+		marginRight: 20,
+		marginBottom: 20
+	},
+
+	switchContainer: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		height: 45,
+		flexDirection: 'row',
+	},
+
+	switchBox: {
+		width: 90,
+		height: 50,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+
+	switchIcon: {
+		transform: [{scale: 0.34}],
+		margin: 0,
+		padding: 0,
+	},
+
+	textNG: {
+		marginRight: 10
+	},
+
+	textG: {
+		marginLeft: 10,
+		marginRight: 23
+
 	}
 
 

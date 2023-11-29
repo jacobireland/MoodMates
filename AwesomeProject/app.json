@@ -4,7 +4,7 @@
     "slug": "AwesomeProject",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/profileIcon.png",
+    "icon": "./assets/hulkhogann.jpg",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/profileIcon.png",

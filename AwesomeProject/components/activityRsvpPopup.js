@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, ScrollView, Image, TouchableOpacity, Modal } from 'react-native';
+import { Text, View, ScrollView, Image, TouchableOpacity, Modal, Switch } from 'react-native';
 import styles from './activityRsvpPopupStyles';
 import { BlurView } from 'expo-blur';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -14,44 +14,20 @@ import anxiety5 from '../assets/anxiety6.png';
 import anxiety6 from '../assets/anxiety7.png';
 import anxiety7 from '../assets/anxiety8.png';
 import anxiety8 from '../assets/anxiety9.png';
+import RSVPSwitch from '../assets/RSVPSwitch.png';
 
 const ActivityRsvpPopup = ({ visible, onClose }) => {
 
-	//variable 'time' stores the time the user selects
-	// use time.toLocaleTimeString() to convert it to readable string
-	const [time, setTime] = useState(new Date());
+	const [switchEnabled, setSwitchEnabled] = useState(false)	;
 
-	const onChange = (event, selectedTime) => {
-		if (event.type === 'set') {
-		// User selected a date
-		setTime(selectedTime);
-		}
+	const [toggleEnabled, setToggleEnabled] = useState(true);
+
+	const handleSwitchToggle = () => {
+		setSwitchEnabled(!switchEnabled);
 	};
 
-	//stores user input for activity
-	const [activity, setActivity] = useState('')
-
-	//stores user input for location
-	const [location, setLocation] = useState('')
-
-	//stores user input for notes
-	const [notes, setNotes] = useState('')
-
-	const [date, setDate] = useState('Today')
-
-	//activates when x-icon is pressed
-	function sendProposal() {
-
-	}
-
-	const changeDate = () => {
-
-		if (date == 'Today') {
-			setDate('Tomorrow')
-		}
-		else {
-			setDate('Today')
-		}
+	const handleToggleEnable = () => {
+		setToggleEnabled(!toggleEnabled)
 	}
 
 	return (
@@ -103,28 +79,40 @@ const ActivityRsvpPopup = ({ visible, onClose }) => {
 								<Text style={styles.text}>Whose Going:</Text>
 								<ScrollView horizontal style={styles.attendeesBox}>
 									<View style={styles.attendees}>
-										<MoodIcon size={65} happiness='#FF8B94' energy={0.8} anxiety={anxiety8}/>
+										<MoodIcon size={65} happiness='#FFEBB5' energy={0.8} anxiety={anxiety5}/>
 										<Text style={styles.text}>Justin</Text>
 									</View>
 									<View style={styles.attendees}>
-										<MoodIcon size={65} happiness='#FF8B94' energy={0.8} anxiety={anxiety8}/>
+										<MoodIcon size={65} happiness='#97E384' energy={1} anxiety={anxiety2}/>
 										<Text style={styles.text}>Anish</Text>
 									</View>
 									<View style={styles.attendees}>
-										<MoodIcon size={65} happiness='#FF8B94' energy={0.8} anxiety={anxiety8}/>
+										<MoodIcon size={65} happiness='#FFAAA5' energy={0.65} anxiety={anxiety6}/>
 										<Text style={styles.text}>Ben</Text>
 									</View>
 									<View style={styles.attendees}>
-										<MoodIcon size={65} happiness='#FF8B94' energy={0.8} anxiety={anxiety8}/>
+										<MoodIcon size={65} happiness='#CFEDC0' energy={1} anxiety={anxiety8}/>
 										<Text style={styles.text}>Andrea</Text>
 									</View>
 								</ScrollView>
 							</View>
-							<View style={styles.sendContainer}>
-								<TouchableOpacity onPress={onClose}
-								style={styles.sendProposal}>
-									<Text style={styles.sendText}>Send Proposal</Text>
-								</TouchableOpacity>
+							<View style={styles.switchContainer}>
+								<Text style={styles.textNG}>Not Going</Text>
+								{switchEnabled ? (
+									<Switch
+										value={toggleEnabled}
+										onValueChange={handleToggleEnable}
+										trackColor={{ true: '#4CBB17', false: 'red' }}
+										ios_backgroundColor="red"
+										// Add any additional Switch props as needed
+									/>
+									) : (
+									<TouchableOpacity style={styles.switchBox}
+									onPress={handleSwitchToggle}>
+										<Image style={styles.switchIcon} source={RSVPSwitch} />
+									</TouchableOpacity>
+								)}
+								<Text style={styles.textG}>Going</Text>
 							</View>
 						</View>
 					</View>
