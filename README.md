@@ -88,3 +88,5 @@ For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sl
 
 
 
+pip install -U flask-cors
+
