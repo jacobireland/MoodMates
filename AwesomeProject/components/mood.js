@@ -128,7 +128,7 @@ const Mood = () => {
 			defined in './components/moodIcon.js
 			we can use this component for any place in our app that needs to
 			show the users glowing orb mood*/}
-			<MoodIcon happiness={happiness} energy={energy} anxiety={anxiety}/>
+			<MoodIcon size={110} happiness={happiness} energy={energy} anxiety={anxiety}/>
 		
 		</View>
 
