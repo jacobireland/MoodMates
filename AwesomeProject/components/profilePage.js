@@ -15,6 +15,7 @@ import anxiety6 from '../assets/anxiety7.png';
 import anxiety7 from '../assets/anxiety8.png';
 import anxiety8 from '../assets/anxiety9.png';
 import backArrow from '../assets/backArrow.png';
+import settingsIcon from '../assets/settingsIcon.png';
 
 const ProfilePage = () => {
 
@@ -25,6 +26,9 @@ const ProfilePage = () => {
 				style={styles.backArrow}
 				source={backArrow}/>
 				<Text style={styles.name}>Andrea</Text>
+				<Image
+				style={styles.settingsIcon}
+				source={settingsIcon}/>
 
 			</View>
 

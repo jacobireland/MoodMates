@@ -9,11 +9,24 @@ const styles = StyleSheet.create({
 
 	headingContainer: {
 		flexDirection: 'row',
+		alignItems: 'center'
 	},
 
 	backArrow: {
-		
+		width: 38,
+		height: 38
 	},
+
+	name: {
+		fontSize: 35,
+		marginLeft: 100,
+		marginRight: 100
+	},
+
+	settingsIcon: {
+		width: 32,
+		height: 32
+	}
 	
 })
 
