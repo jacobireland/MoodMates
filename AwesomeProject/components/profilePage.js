@@ -22,9 +22,11 @@ const ProfilePage = () => {
 	return (
 		<View style={styles.mainContainer}>
 			<View style={styles.headingContainer}>
-				<Image
-				style={styles.backArrow}
-				source={backArrow}/>
+				<TouchableOpacity style={styles.arrowContainer}>
+					<Image
+					style={styles.backArrow}
+					source={backArrow}/>
+				</TouchableOpacity>
 				<Text style={styles.name}>Andrea</Text>
 				<Image
 				style={styles.settingsIcon}
@@ -32,7 +34,7 @@ const ProfilePage = () => {
 			</View>
 
 			<View style={styles.moodContainer}>
-				<MoodIcon size={100} happiness={'#FFD3B6'} energy={.9} anxiety={anxiety7}/>
+				<MoodIcon size={85} happiness={'#FFD3B6'} energy={.9} anxiety={anxiety7}/>
 				<Text style={styles.moodText}>Your Current Mood</Text>
 			</View>
 
@@ -55,17 +57,27 @@ const ProfilePage = () => {
 				<Text style={styles.trendsText}>Your Mood Trends</Text>
 				<View style={styles.intervals}>
 					<Text style={styles.thisTexts}>This Week</Text>
-					<MoodIcon style={styles.moods} size={80} happiness={'#CFEDC0'} energy={.9} anxiety={anxiety7}/>
+					<View style={styles.weekContainer}>
+						<MoodIcon style={styles.moods} size={70} happiness={'#CFEDC0'} energy={.9} anxiety={anxiety7}/>
+					</View>
 				</View>
 				<View style={styles.intervals}>
 					<Text style={styles.thisTexts}>This Month</Text>
-					<MoodIcon style={styles.moods} size={80} happiness={'#FFD3B6'} energy={.75} anxiety={anxiety2}/>
+					<View style={styles.monthContainer}>
+						<MoodIcon style={styles.moods} size={70} happiness={'#FFD3B6'} energy={1} anxiety={anxiety2}/>
+					</View>
 				</View>
 				<View style={styles.intervals}>
 					<Text style={styles.thisTexts}>This Year</Text>
-					<MoodIcon style={styles.moods} size={80} happiness={'#FFEBB5'} energy={1} anxiety={anxiety5}/>
+					<View style={styles.yearContainer}>
+						<MoodIcon style={styles.moods} size={70} happiness={'#FFEBB5'} energy={1} anxiety={anxiety5}/>
+					</View>
 				</View>
 			</View>
+
+			<TouchableOpacity style={styles.logsContainer}>
+				<Text style={styles.logsText}>View Recent Logs</Text>
+			</TouchableOpacity>
 
 
 		</View>
