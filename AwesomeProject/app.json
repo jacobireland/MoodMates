@@ -7,7 +7,7 @@
     "icon": "./assets/hulkhogann.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/profileIcon.png",
+      "image": "./assets/hulkhogann.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/profileIcon.png",
+        "foregroundImage": "./assets/hulkhogann.jpg",
         "backgroundColor": "#ffffff"
       }
     },
