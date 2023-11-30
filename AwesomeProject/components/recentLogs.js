@@ -19,7 +19,7 @@ import backArrow from '../assets/backArrow.png';
 
 
 
-const RecentLogs = () => {
+const RecentLogs = ({screenPicker}) => {
 
 	const entries = [
 		{
@@ -88,7 +88,7 @@ const RecentLogs = () => {
 	return (
 		<View>
 			<View style={styles.headingLogsContainer}>
-				<TouchableOpacity style={styles.arrowContainer}>
+				<TouchableOpacity onPress={() => {screenPicker('ProfilePage')}} style={styles.arrowContainer}>
 					<Image
 					style={styles.backArrow}
 					source={backArrow}/>
