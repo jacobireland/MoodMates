@@ -4,6 +4,9 @@ import styles from './style';
 import NavBar from './components/navBar';
 import MoodPage from './components/moodPage';
 import FlaskTester from './components/flaskTester';
+import ActivityRsvpPopupMain from './components/activityRsvpPopupMain';
+import ProposalPopupMain from './components/proposalPopupMain';
+import Mood from './components/mood';
 
 
 /** This is the backbone code for our app.
@@ -17,6 +20,30 @@ import FlaskTester from './components/flaskTester';
 
 const App = () => {
 
+	const [page, setPage] = React.useState('MoodPage')
+
+	const screenChoose = (screen) => {
+		setPage(screen)
+	};
+
+	const screenRender = () => {
+		if (page == 'MoodPage') {
+			return <MoodPage/>
+		}
+
+		else if (page == 'GroupsPage') {
+			return <ActivityRsvpPopupMain/>
+		}
+
+		else if (page == 'ActivitiesPage') {
+			return <ProposalPopupMain/>
+		}
+
+		else {
+			return <MoodPage/>
+		}
+	}
+
 	return (
 	
 		<View style={styles.container}>
@@ -25,15 +52,15 @@ const App = () => {
 				{/* replace this with your page export
 				i.e.: <your_page_export_name/> to be able to see your
 				code in the Expo Go app */}
-				<FlaskTester/>
+				{screenRender()}
 
 			</View>
 		
-		{/* Component for our nav bar,
-		defined in /components/navBar.js */}
-		<NavBar/>
+			{/* Component for our nav bar,
+			defined in /components/navBar.js */}
+			<NavBar screenChoose={screenChoose}/>
 		
-	</View>
+		</View>
 		
 )}
 
