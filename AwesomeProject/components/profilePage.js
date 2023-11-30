@@ -16,60 +16,89 @@ import anxiety7 from '../assets/anxiety8.png';
 import anxiety8 from '../assets/anxiety9.png';
 import settingsIcon from '../assets/settingsIcon.png';
 import backArrow from '../assets/backArrow.png';
+import RecentLogs from './recentLogs';
 
 const ProfilePage = () => {
 
-	return (
-		<View style={styles.mainContainer}>
-			<View style={styles.headingContainer}>
-				<Image
-				style={styles.backArrow}
-				source={backArrow}/>
-				<Text style={styles.name}>Andrea</Text>
-				<Image
-				style={styles.settingsIcon}
-				source={settingsIcon}/>
+	const [screen, setScreen] = React.useState("ProfilePage")
+
+	const screenPicker = (src) => {
+		setScreen(src)
+	}
+
+	if (screen == "ProfilePage") {
+
+		return (
+
+			<View style={styles.mainContainer}>
+				<View style={styles.headingContainer}>
+					<TouchableOpacity style={styles.arrowContainer}>
+						<Image
+						style={styles.backArrow}
+						source={backArrow}/>
+					</TouchableOpacity>
+					<Text style={styles.name}>Andrea</Text>
+					<Image
+					style={styles.settingsIcon}
+					source={settingsIcon}/>
+				</View>
+
+				<View style={styles.moodContainer}>
+					<MoodIcon size={85} happiness={'#FFD3B6'} energy={.9} anxiety={anxiety7}/>
+					<Text style={styles.moodText}>Your Current Mood</Text>
+				</View>
+
+				<View style={styles.friendsButton}>
+					<Text style={styles.friendsText}>Find Friends</Text>
+				</View>
+
+				<View style={styles.statsContainer}>
+					<View style={styles.friendsStat}>
+						<Text style={styles.fStatsText}>9</Text>
+						<Text style={styles.fStatsText}>Friends</Text>
+					</View>
+					<View style={styles.groupsStat}>
+						<Text style={styles.fStatsText}>3</Text>
+						<Text style={styles.fStatsText}>Groups</Text>
+					</View>
+				</View>
+
+				<View style={styles.trendsContainer}>
+					<Text style={styles.trendsText}>Your Mood Trends</Text>
+					<View style={styles.intervals}>
+						<Text style={styles.thisTexts}>This Week</Text>
+						<View style={styles.weekContainer}>
+							<MoodIcon style={styles.moods} size={70} happiness={'#CFEDC0'} energy={.9} anxiety={anxiety7}/>
+						</View>
+					</View>
+					<View style={styles.intervals}>
+						<Text style={styles.thisTexts}>This Month</Text>
+						<View style={styles.monthContainer}>
+							<MoodIcon style={styles.moods} size={70} happiness={'#FFD3B6'} energy={1} anxiety={anxiety2}/>
+						</View>
+					</View>
+					<View style={styles.intervals}>
+						<Text style={styles.thisTexts}>This Year</Text>
+						<View style={styles.yearContainer}>
+							<MoodIcon style={styles.moods} size={70} happiness={'#FFEBB5'} energy={1} anxiety={anxiety5}/>
+						</View>
+					</View>
+				</View>
+
+				<TouchableOpacity onPress={() => {screenPicker('RecentLogs')}} style={styles.logsContainer}>
+					<Text style={styles.logsText}>View Recent Logs</Text>
+				</TouchableOpacity>
+
+
 			</View>
 
-			<View style={styles.moodContainer}>
-				<MoodIcon size={100} happiness={'#FFD3B6'} energy={.9} anxiety={anxiety7}/>
-				<Text style={styles.moodText}>Your Current Mood</Text>
-			</View>
+		)}
 
-			<View style={styles.friendsButton}>
-				<Text style={styles.friendsText}>Find Friends</Text>
-			</View>
+		else {
+			return <RecentLogs
+					screenPicker={screenPicker}/>
+		}
 
-			<View style={styles.statsContainer}>
-				<View style={styles.friendsStat}>
-					<Text style={styles.fStatsText}>9</Text>
-					<Text style={styles.fStatsText}>Friends</Text>
-				</View>
-				<View style={styles.groupsStat}>
-					<Text style={styles.fStatsText}>3</Text>
-					<Text style={styles.fStatsText}>Groups</Text>
-				</View>
-			</View>
-
-			<View style={styles.trendsContainer}>
-				<Text style={styles.trendsText}>Your Mood Trends</Text>
-				<View style={styles.intervals}>
-					<Text style={styles.thisTexts}>This Week</Text>
-					<MoodIcon style={styles.moods} size={80} happiness={'#CFEDC0'} energy={.9} anxiety={anxiety7}/>
-				</View>
-				<View style={styles.intervals}>
-					<Text style={styles.thisTexts}>This Month</Text>
-					<MoodIcon style={styles.moods} size={80} happiness={'#FFD3B6'} energy={.75} anxiety={anxiety2}/>
-				</View>
-				<View style={styles.intervals}>
-					<Text style={styles.thisTexts}>This Year</Text>
-					<MoodIcon style={styles.moods} size={80} happiness={'#FFEBB5'} energy={1} anxiety={anxiety5}/>
-				</View>
-			</View>
-
-
-		</View>
-
-)}
+}
 
 export default ProfilePage;

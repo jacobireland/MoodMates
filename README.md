@@ -83,6 +83,10 @@ For creating pop-up modal to enter diary text: https://blog.logrocket.com/creati
 
 For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sliders
 
+For creating Recent Logs: https://stackoverflow.com/questions/50556937/how-do-i-make-text-bold-italic-or-underline-in-react-native
+
+
+
 
 
 

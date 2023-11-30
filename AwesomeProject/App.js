@@ -4,6 +4,7 @@ import styles from './style';
 import NavBar from './components/navBar';
 import MoodPage from './components/moodPage';
 import ProfilePage from './components/profilePage';
+import RecentLogs from './components/recentLogs';
 
 
 /** This is the backbone code for our app.
