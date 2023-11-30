@@ -3,6 +3,7 @@ import { View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
 import styles from './style';
 import NavBar from './components/navBar';
 import MoodPage from './components/moodPage';
+import ProfilePage from './components/profilePage';
 
 
 /** This is the backbone code for our app.
@@ -24,7 +25,7 @@ const App = () => {
 				{/* replace this with your page export
 				i.e.: <your_page_export_name/> to be able to see your
 				code in the Expo Go app */}
-				<MoodPage/>
+				<ProfilePage/>
 
 			</View>
 		
