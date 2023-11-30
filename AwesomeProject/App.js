@@ -25,7 +25,7 @@ const App = () => {
 				{/* replace this with your page export
 				i.e.: <your_page_export_name/> to be able to see your
 				code in the Expo Go app */}
-				<MoodPage/>
+				<ProfilePage/>
 
 			</View>
 		
