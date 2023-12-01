@@ -8,7 +8,7 @@ import ActivityRsvpPopupMain from './components/activityRsvpPopupMain';
 import ProposalPopupMain from './components/proposalPopupMain';
 import RecentLogs from './components/recentLogs';
 import ProfilePage from './components/profilePage';
-
+import MyGroups from './components/myGroups';
 
 /** This is the backbone code for our app.
 	The NavBar will be on every page.
