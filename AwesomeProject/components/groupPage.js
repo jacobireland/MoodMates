@@ -4,6 +4,7 @@ import groupStyles from './groupPageStyle.js';
 import backArrowIcon from '../assets/backArrowIcon.png';
 import settingsIcon from '../assets/settingsIcon.png';
 import MoodIcon from './moodIcon.js';
+import CardStack from './cardStack.js';
 import anxiety0 from '../assets/Anxiety1.png';
 import anxiety1 from '../assets/Anxiety2.png';
 import anxiety2 from '../assets/Anxiety3.png';
@@ -268,10 +269,9 @@ return (
                 </View>
         </View>
 
-        <View style={groupStyles.card}>
-                <Text style={groupStyles.proposeActivityText}>Propose{'\n'}Activity</Text>
-                <Image source={addIcon} style={groupStyles.addIcon} />
-        </View>
+        
+
+        <CardStack />
 
         {oliviaMoodIcon}
         {oliviaText}
