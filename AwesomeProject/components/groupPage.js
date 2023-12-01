@@ -119,10 +119,10 @@ function anxietySetter(value) {
 const oliviaMoodIcon = (
     <View style={groupStyles.oliviaMoodIconContainer}>
       <MoodIcon
-        size={80}
-        happiness="#FFAAA5"  // Placeholder values, replace with actual mood data
-        energy={0.7}         // Placeholder values, replace with actual mood data
-        anxiety={anxiety4}   // Placeholder values, replace with actual mood data
+        size={85}
+        happiness="#FFAAA5"  
+        energy={0.8}         
+        anxiety={anxiety7}   
       />
     </View>  
 );
@@ -130,6 +130,125 @@ const oliviaMoodIcon = (
 const oliviaText = (
     <View style={groupStyles.moodIconTextContainer}>
       <Text style={groupStyles.oliviaMoodIconText}>Olivia</Text>
+    </View>
+);
+
+const benMoodIcon = (
+    <View style={groupStyles.benMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#DCECD1"  
+            energy={0.2}         
+            anxiety={anxiety2}   
+        />
+    </View>  
+);
+
+const benText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.benMoodIconText}>Ben</Text>
+    </View>
+);
+
+const justinMoodIcon = (
+    <View style={groupStyles.justinMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#FFEBB5"  
+            energy={0.7}         
+            anxiety={anxiety1}   
+        />
+    </View>  
+);
+
+const justinText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.justinMoodIconText}>Justin</Text>
+    </View>
+);
+
+const jacobMoodIcon = (
+    <View style={groupStyles.jacobMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#BDE6A8" 
+            energy={0.9}         
+            anxiety={anxiety8}  
+        />
+    </View>  
+);
+
+const jacobText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.jacobMoodIconText}>Jacob</Text>
+    </View>
+);
+
+const mayaMoodIcon = (
+    <View style={groupStyles.mayaMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#FF7480"  
+            energy={0.3}         
+            anxiety={anxiety2}   
+        />
+    </View>  
+);
+
+const mayaText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.mayaMoodIconText}>Maya</Text>
+    </View>
+);
+
+const anishMoodIcon = (
+    <View style={groupStyles.anishMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#FFD3B6"  
+            energy={0.9}         
+            anxiety={anxiety6}   
+        />
+    </View>  
+);
+
+const anishText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.anishMoodIconText}>Anish</Text>
+    </View>
+);
+
+const charlieMoodIcon = (
+    <View style={groupStyles.charlieMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#97E384"  
+            energy={0.4}         
+            anxiety={anxiety0}   
+        />
+    </View>  
+);
+
+const charlieText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.charlieMoodIconText}>Charlie</Text>
+    </View>
+);
+
+const myMoodIcon = (
+    <View style={groupStyles.myMoodIconContainer}>
+        <MoodIcon
+            size={85}
+            happiness="#FF8B94"  
+            energy={0.3}         
+            anxiety={anxiety5}   
+        />
+    </View>  
+);
+
+const myText = (
+    <View style={groupStyles.moodIconTextContainer}>
+        <Text style={groupStyles.myMoodIconText}>Me</Text>
     </View>
 );
 
@@ -156,6 +275,27 @@ return (
 
         {oliviaMoodIcon}
         {oliviaText}
+
+        {benMoodIcon}
+        {benText}
+
+        {justinMoodIcon}
+        {justinText}
+
+        {mayaMoodIcon}
+        {mayaText}
+
+        {jacobMoodIcon}
+        {jacobText}
+
+        {charlieMoodIcon}
+        {charlieText}
+
+        {anishMoodIcon}
+        {anishText}
+
+        {myMoodIcon}
+        {myText}
        
     </View>
 )}

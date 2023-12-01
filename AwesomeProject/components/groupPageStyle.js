@@ -62,7 +62,7 @@ const groupStyles = StyleSheet.create({
         height: 204,
         backgroundColor: '#C0EDDA',
         borderRadius: 15,
-        marginTop: 190,
+        marginTop: 188,
         alignSelf: 'center', 
         borderWidth: 1,
         borderColor: 'black',
@@ -91,13 +91,104 @@ const groupStyles = StyleSheet.create({
     oliviaMoodIconText: {
         fontSize: 18,
         textAlign: 'center',
-        marginTop: -295,
+        marginTop: -296,
     },
 
     oliviaMoodIconContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        top: -325, 
+        top: -326, 
+        height: 0,
+    },
+
+    benMoodIconText: {
+        fontSize: 18,
+        marginTop: -212,
+        left: 301,
+    },
+    
+    benMoodIconContainer: {
+        justifyContent: 'center',
+        left: 276,
+        top: -242, 
+        height: 0,
+    },
+    
+    justinMoodIconText: {
+        fontSize: 18,
+        marginTop: -222,
+        left: 14
+    },
+    
+    justinMoodIconContainer: {
+        justifyContent: 'center',
+        top: -252, 
+        height: 0,
+        right: 4,
+    },
+
+    mayaMoodIconText: {
+        fontSize: 18,
+        marginTop: -102,
+        left: 304,
+    },
+    
+    mayaMoodIconContainer: {
+        justifyContent: 'center',
+        left: 284,
+        top: -132, 
+        height: 0,
+    },
+
+    jacobMoodIconText: {
+        fontSize: 18,
+        marginTop: -107,
+        left: 0
+    },
+    
+    jacobMoodIconContainer: {
+        justifyContent: 'center',
+        top: -137, 
+        height: 0,
+        right: 17,
+    },
+
+    charlieMoodIconText: {
+        fontSize: 18,
+        marginTop: 8,
+        left: 288,
+    },
+    
+    charlieMoodIconContainer: {
+        justifyContent: 'center',
+        left: 276,
+        top: -22, 
+        height: 0,
+    },
+
+    anishMoodIconText: {
+        fontSize: 18,
+        marginTop: -32,
+        left: 16
+    },
+    
+    anishMoodIconContainer: {
+        justifyContent: 'center',
+        top: -62, 
+        height: 0,
+        right: 4,
+    },
+
+    myMoodIconText: {
+        fontSize: 18,
+        textAlign: 'center',
+        marginTop: 33,
+    },
+    
+    myMoodIconContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        top: 3, 
         height: 0,
     },
 
