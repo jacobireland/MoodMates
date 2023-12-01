@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
 import styles from './style';
-import NavBar from './components/navBar';
+import NavBar from './components/FINALnavBar';
 import MoodPage from './components/moodPage';
 import FlaskTester from './components/flaskTester';
 import ActivityRsvpPopupMain from './components/activityRsvpPopupMain';
 import ProposalPopupMain from './components/proposalPopupMain';
-import Mood from './components/mood';
+import RecentLogs from './components/recentLogs';
+import ProfilePage from './components/profilePage';
 
 
 /** This is the backbone code for our app.
@@ -28,7 +29,7 @@ const App = () => {
 
 	const screenRender = () => {
 		if (page == 'MoodPage') {
-			return <MoodPage/>
+			return <MoodPage screenChoose={screenChoose}/>
 		}
 
 		else if (page == 'GroupsPage') {
@@ -39,8 +40,16 @@ const App = () => {
 			return <ProposalPopupMain/>
 		}
 
+		else if (page == 'ProfilePage') {
+			return <ProfilePage screenChoose={screenChoose}/>
+		}
+
+		else if (page == 'RecentLogs') {
+			return <RecentLogs/>
+		}
+
 		else {
-			return <MoodPage/>
+			return <MoodPage screenChoose={screenChoose}/>
 		}
 	}
 

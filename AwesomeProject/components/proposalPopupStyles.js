@@ -117,7 +117,6 @@ const styles = StyleSheet.create({
 		width: '100%',
 	},
 
-
 	notestextView: {
 		borderColor: 'black',
 		borderWidth: 1,
@@ -125,10 +124,10 @@ const styles = StyleSheet.create({
 		height: 40,
 		flex: 1,
 		justifyContent: 'center',
-		alignItems: 'flex-start',
-		marginLeft: 41,
 		padding: 4,
-		height: '100%'
+		marginLeft: 41,
+		height: '100%',
+		justifyContent: 'flex-start'
 	},
 
 	sendProposal: {

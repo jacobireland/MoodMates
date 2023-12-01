@@ -18,7 +18,7 @@ import settingsIcon from '../assets/settingsIcon.png';
 import backArrow from '../assets/backArrow.png';
 import RecentLogs from './recentLogs';
 
-const ProfilePage = () => {
+const ProfilePage = ({screenChoose}) => {
 
 	const [screen, setScreen] = React.useState("ProfilePage")
 
@@ -32,7 +32,7 @@ const ProfilePage = () => {
 
 			<View style={styles.mainContainer}>
 				<View style={styles.headingContainer}>
-					<TouchableOpacity style={styles.arrowContainer}>
+					<TouchableOpacity onPress={() => {screenChoose('MoodPage')}} style={styles.arrowContainer}>
 						<Image
 						style={styles.backArrow}
 						source={backArrow}/>
