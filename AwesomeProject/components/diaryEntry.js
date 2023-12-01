@@ -2,11 +2,35 @@ import React, { useState } from 'react';
 import { View, Text, Modal, TextInput, Button, StyleSheet } from 'react-native';
 import styles from '../style';
 import { BlurView } from 'expo-blur';
+import Backendless from 'backendless';
+
+Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
 const DiaryEntry = ({ visible, onClose, onSave }) => {
 	const [text, setText] = useState('');
 
+	const saveToBackend = async () => {
+
+		try {
+			// Assuming you have a 'TextInputData' table in Backendless with a 'text' column
+			const dataObject = {
+				text: text,
+				dateMade: new Date(),
+			};
+		
+			const savedObject = await Backendless.Data.of('DiaryEntries').save(dataObject);
+			console.log('Saved to Backendless:', savedObject);
+		
+		} catch (error) {
+			console.error('Error saving to Backendless:', error);
+		}
+	};
+
+
+
+
 	const handleSave = () => {
+	saveToBackend();
 	onSave(determineText(text));
 	setText(text);
 	onClose();

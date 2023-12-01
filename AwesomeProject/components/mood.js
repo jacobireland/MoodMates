@@ -12,6 +12,9 @@ import anxiety6 from '../assets/anxiety7.png';
 import anxiety7 from '../assets/anxiety8.png';
 import anxiety8 from '../assets/anxiety9.png';
 import MoodIcon from './moodIcon';
+import Backendless from 'backendless';
+
+Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
 const Mood = () => {
 
@@ -25,6 +28,27 @@ const Mood = () => {
 
 	const [energy, setEnergy] = React.useState(0.7)
 
+
+
+	//save user mood to backend
+
+	const saveToBackend = async () => {
+
+		try {
+			// Assuming you have a 'TextInputData' table in Backendless with a 'text' column
+			const dataObject = {
+				userHappiness: happiness,
+				userEnergy: energy,
+				userAnxiety: anxiety,
+			};
+		
+			const savedObject = await Backendless.Data.of('UserMood').save(dataObject);
+			console.log('Saved to Backendless:', savedObject);
+		
+		} catch (error) {
+			console.error('Error saving to Backendless:', error);
+		}
+	};
 
 	//takes the value of the happiness slider and sets the HEX color
 	function happinessSetter(value) {
@@ -55,6 +79,7 @@ const Mood = () => {
 		if (value == 8) {
 			setHappiness('#97E384')
 		}
+
 	}
 
 	//takes the value of the energy slider and sets the energy value
@@ -86,6 +111,7 @@ const Mood = () => {
 		if (value == 8) {
 			setEnergy(1.0)
 		}
+
 	}
 
 	//takes the value of the anxiety slider and sets the image for anxiety squiggles
@@ -117,6 +143,7 @@ const Mood = () => {
 		if (value == 8) {
 			setAnxiety(anxiety8)
 		}
+
 	}
 
 	return (
@@ -139,7 +166,7 @@ const Mood = () => {
 		to change the glowing orb to match their mood*/}
 		<Slider
 		onValueChange={value => happinessSetter(value)}
-		onSlidingComplete={value => happinessSetter(value)}
+		onSlidingComplete={() => {saveToBackend()}}
 		value = {4}
 		minimumValue = {0}
 		maximumValue = {8}
@@ -166,7 +193,7 @@ const Mood = () => {
 
 		<Slider
 		onValueChange={value => energySetter(value)}
-		onSlidingComplete={value => energySetter(value)}
+		onSlidingComplete={() => {saveToBackend()}}
 		value = {4}
 		minimumValue = {0}
 		maximumValue = {8}
@@ -193,7 +220,7 @@ const Mood = () => {
 		<Slider
 		value = {4}
 		onValueChange={value => anxietySetter(value)}
-		onSlidingComplete={value => anxietySetter(value)}
+		onSlidingComplete={() => {saveToBackend()}}
 		minimumValue = {0}
 		maximumValue = {8}
 		step = {1}

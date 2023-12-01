@@ -95,4 +95,7 @@ For creating Recent Logs: https://stackoverflow.com/questions/50556937/how-do-i-
 pip install -U flask-cors
 npm install @react-navigation/native
 npm install @react-navigation/stack
+npm install backendless
+npx expo install --fix
+
 

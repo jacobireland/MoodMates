@@ -17,8 +17,66 @@ import anxiety8 from '../assets/anxiety9.png';
 import settingsIcon from '../assets/settingsIcon.png';
 import backArrow from '../assets/backArrow.png';
 import RecentLogs from './recentLogs';
+import Backendless from 'backendless';
+
+
+
+Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
+
 
 const ProfilePage = ({screenChoose}) => {
+
+	const [happiness, setHappiness] = React.useState('#FFD3B6')
+
+	const [energy, setEnergy] = React.useState(0.75)
+
+	const [anxiety, setAnxiety] = React.useState(anxiety7)
+
+	const onError = error => {
+		console.error('Server reported an error: ', error.message)
+		console.error('error code: ', error.code)
+		console.error('http status: ', error.status)
+	}
+
+	anxietyPicker = (value) => {
+		if (value == 0) {
+			setAnxiety(anxiety0)
+		}
+		if (value == 1) {
+			setAnxiety(anxiety1)
+		}
+		if (value == 2) {
+			setAnxiety(anxiety2)
+		}
+		if (value == 3) {
+			setAnxiety(anxiety3)
+		}
+		if (value == 4) {
+			setAnxiety(anxiety4)
+		}
+		if (value == 5) {
+			setAnxiety(anxiety5)
+		}
+		if (value == 6) {
+			setAnxiety(anxiety6)
+		}
+		if (value == 7) {
+			setAnxiety(anxiety7)
+		}
+		if (value == 8) {
+			setAnxiety(anxiety8)
+		}
+	}
+
+	const setUserMood = (userMood) => {
+		setHappiness(`${ userMood.userHappiness }`)
+		setEnergy(parseFloat(`${ userMood.userEnergy }`))
+		anxietyPicker(`${ userMood.userAnxiety }`)
+	}
+
+	Backendless.Data.of('UserMood').findLast()
+		.then(setUserMood)
+		.catch(onError)
 
 	const [screen, setScreen] = React.useState("ProfilePage")
 
@@ -44,7 +102,7 @@ const ProfilePage = ({screenChoose}) => {
 				</View>
 
 				<View style={styles.moodContainer}>
-					<MoodIcon size={85} happiness={'#FFD3B6'} energy={.9} anxiety={anxiety7}/>
+					<MoodIcon size={85} happiness={happiness} energy={energy} anxiety={anxiety}/>
 					<Text style={styles.moodText}>Your Current Mood</Text>
 				</View>
 
