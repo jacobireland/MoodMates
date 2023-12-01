@@ -97,5 +97,6 @@ npm install @react-navigation/native
 npm install @react-navigation/stack
 npm install backendless
 npx expo install --fix
+npm install react-native-gesture-handler
 
 
