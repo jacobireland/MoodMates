@@ -4,18 +4,24 @@ import styles from './activitiesPageStyles';
 import plus from '../assets/plus.png';
 import infoIcon from '../assets/infoIcon.png';
 import backArrow from '../assets/backArrow.png';
+import { useState } from "react";
+import Toggle from "react-native-toggle-element";
+
 
 const ActivitiesPage = () => {
+    
 
 	return (
 		<View style={styles.mainContainer}>
             {/* Activity Page Heading */}
-            <View style={styles.activities}>
-                <Text style={styles.actHeading}>Activities</Text>
+            <View style={styles.headingContainer}>
                 <Image
                 style={styles.backArrow}
                 source={backArrow}
                 />
+
+                <Text style={styles.actHeading}>Activities</Text>
+                
                 <Image
                 style={styles.plus}
                 source={plus}
@@ -23,74 +29,84 @@ const ActivitiesPage = () => {
             </View>
             
             {/* My Proposals Section */}
-            <View style={styles.myProps}>
-                <Text style={styles.myPropTitle}>My Proposals</Text>
+            <View style={styles.propsContainer}>
+                <Text style={styles.propTitle}>My Proposals</Text>
                 {/* My Proposals Activities*/}
-                <View style={styles.myPropActivities}>
+                <View style={styles.propActivities}>
                     {/* My Activity 1*/}
-                    <TouchableOpacity style={styles.m1_1}>
-                            <View style={styles.m1_1activity}>
-                                <Text style={styles.m1_1title}>Boardgames</Text>
-                                <Image
-                                style={styles.infoIcon}
-                                source={infoIcon}
-                                />
-                            </View>
-                            <View style={styles.m1_1info}>
-                                <Text style={styles.m1_1date}>Tonight, 9pm</Text>
-                                <Text style={styles.m1_1name}>Me</Text>
-                            </View>
-                        </TouchableOpacity>
+                    <TouchableOpacity style={styles.activityContainer}>
+                        <View style={styles.activity}>
+                            <Text style={styles.actTitle}>Boardgames</Text>
+                            <Image
+                            style={styles.infoIcon}
+                            source={infoIcon}
+                            />
+                        </View>
+
+                        <View style={styles.activityInfo}>
+                            <Text style={styles.actDate}>Tonight, 9:00pm</Text>
+                            <Text style={styles.actName}>Me</Text>
+                        </View>
+
+                    </TouchableOpacity>
                 </View>
             </View>
 
             {/* Group Proposals Section */}
-            <View style={styles.groupProps}>
-                <Text style={styles.groupPropTitle}>Groups' Proposals </Text>
+            <View style={styles.propsContainer}>
+                <Text style={styles.propTitle}>Groups' Proposals </Text>
                 {/* Group Proposals Activities*/}
-                <View style={styles.groupPropActivities}>
+                <View style={styles.propActivities}>
                     {/* Group 1 Activities*/}
-                    <Text style={styles.g1Name}>Movie Squad</Text>
-                    <View style={styles.g1Activities}>
+                    <Text style={styles.gName}>Movie Squad</Text>
+                    <View style={styles.gActivities}>
                         {/* Group 1 Activity 1*/}
-                        <TouchableOpacity style={styles.g1_1}>
-                            <View style={styles.g1_1activity}>
-                                <Text style={styles.g1_1title}>Movie Night</Text>
+                        <TouchableOpacity style={styles.activityContainer}>
+                            <View style={styles.activity}>
+                                <Text style={styles.actTitle}>Movie Night</Text>
                                 <Image
                                 style={styles.infoIcon}
                                 source={infoIcon}
                                 />
                             </View>
-                            <View style={styles.g1_1info}>
-                                <Text style={styles.g1_1date}>Tonight, 10pm</Text>
-                                <Text style={styles.g1_1name}>Olivia</Text>
+
+                            <View style={styles.activityInfo}>
+                                <Text style={styles.actDate}>Tonight, 10:00pm</Text>
+                                <Text style={styles.actName}>Olivia</Text>
                             </View>
+
                         </TouchableOpacity>
+
+                        
 
                         {/* Group 1 Activity 2*/}
-                        <TouchableOpacity style={styles.g1_2}>
-                            <View style={styles.g1_2name}>
-                                <Text style={styles.g1_2title}>Party in EC</Text>
+                        {/* My Activity 1*/}
+                        <TouchableOpacity style={styles.activityContainer}>
+                            <View style={styles.activity}>
+                                <Text style={styles.actTitle}>Party in EC</Text>
                                 <Image
                                 style={styles.infoIcon}
                                 source={infoIcon}
                                 />
                             </View>
-                            <View style={styles.g1_2info}>
-                                <Text style={styles.g1_2date}>Tmrw, 10:30pm</Text>
-                                <Text style={styles.g1_2name}>Andrea</Text>
+
+                            <View style={styles.activityInfo}>
+                                <Text style={styles.actDate}>Tmrw, 10:30pm</Text>
+                                <Text style={styles.actName}>Andrea</Text>
                             </View>
+
                         </TouchableOpacity>
+                        
                     </View>
 
-                    <Text style={styles.g2Name}>Track Team</Text>
-                    <View style={styles.g2Activities}>
-                        <Text style={styles.none}>No Proposals!</Text>
+                    <Text style={styles.gName}>Track Team</Text>
+                    <View style={styles.gActivities}>
+                        <Text style={styles.noActivity}>No Proposals!</Text>
                     </View>
 
-                    <Text style={styles.g3Name}>The Boys</Text>
-                    <View style={styles.g3Activities}>
-                        <Text style={styles.none}>No Proposals!</Text>
+                    <Text style={styles.gName}>The Boys</Text>
+                    <View style={styles.gActivities}>
+                        <Text style={styles.noActivity}>No Proposals!</Text>
                     </View>
                 </View>
                 
