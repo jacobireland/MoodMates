@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, View, Image, TextInput } from 'react-native';
+import { Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../style';
 import profileIcon from '../assets/profileIcon.png';
 
-const Greeting = () => {
+const Greeting = ({screenChoose}) => {
 
 	function greetingSetter() {
 		const hours = new Date().getHours()
@@ -34,10 +34,12 @@ const Greeting = () => {
 					<View style={styles.greetingWordContainer}>
 						<Text style={styles.greetingWord}>{greetingType}</Text>
 					</View>
-					<Image
-					style={styles.profileIcon}
-					source={profileIcon}
-					/>
+					<TouchableOpacity onPress={() => screenChoose('ProfilePage')} style={styles.profileIconContainer}>
+						<Image
+						style={styles.profileIcon}
+						source={profileIcon}
+						/>
+					</TouchableOpacity>
 				
 				</View>
 				<Text style={styles.greetingName}>Andrea!</Text>

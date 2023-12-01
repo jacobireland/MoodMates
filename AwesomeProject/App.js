@@ -3,6 +3,10 @@ import { View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
 import styles from './style';
 import NavBar from './components/navBar';
 import MoodPage from './components/moodPage';
+import FlaskTester from './components/flaskTester';
+import ActivityRsvpPopupMain from './components/activityRsvpPopupMain';
+import ProposalPopupMain from './components/proposalPopupMain';
+import RecentLogs from './components/recentLogs';
 import ProfilePage from './components/profilePage';
 import MyGroups from './components/myGroups';
 
@@ -17,6 +21,38 @@ import MyGroups from './components/myGroups';
 
 const App = () => {
 
+	const [page, setPage] = React.useState('MoodPage')
+
+	const screenChoose = (screen) => {
+		setPage(screen)
+	};
+
+	const screenRender = () => {
+		if (page == 'MoodPage') {
+			return <MoodPage screenChoose={screenChoose}/>
+		}
+
+		else if (page == 'GroupsPage') {
+			return <ActivityRsvpPopupMain/>
+		}
+
+		else if (page == 'ActivitiesPage') {
+			return <ProposalPopupMain/>
+		}
+
+		else if (page == 'ProfilePage') {
+			return <ProfilePage screenChoose={screenChoose}/>
+		}
+
+		else if (page == 'RecentLogs') {
+			return <RecentLogs/>
+		}
+
+		else {
+			return <MoodPage screenChoose={screenChoose}/>
+		}
+	}
+
 	return (
 	
 		<View style={styles.container}>
@@ -25,15 +61,15 @@ const App = () => {
 				{/* replace this with your page export
 				i.e.: <your_page_export_name/> to be able to see your
 				code in the Expo Go app */}
-				<MyGroups/>
+				{screenRender()}
 
 			</View>
 		
-		{/* Component for our nav bar,
-		defined in /components/navBar.js */}
-		<NavBar/>
+			{/* Component for our nav bar,
+			defined in /components/navBar.js */}
+			<NavBar screenChoose={screenChoose}/>
 		
-	</View>
+		</View>
 		
 )}
 
