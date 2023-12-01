@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from '../style';
 import Mood from './mood';
-import NavBar from './navBar';
+import NavBar from './FINALnavBar';
 import Greeting from './greeting';
 import DiaryEntry from './diaryEntry';
 

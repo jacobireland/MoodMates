@@ -1,28 +1,23 @@
 import React from 'react';
-import { Text, View, TouchableOpacity} from 'react-native';
+import { Text, View, } from 'react-native';
 import styles from '../style';
 
-const NavBar = ({screenChoose}) => {
-
-	const screenButton = (scr) => {
-		screenChoose(scr)
-	}
-
+const NavBar = () => {
 	return (
 		<View style={styles.navBar}>
-			<TouchableOpacity onPress={() => screenButton('MoodPage')} style={styles.navButtonContainer}>
+			<View style={styles.navButtonContainer}>
 				<Text style={styles.buttonText}>Mood</Text>
-			</TouchableOpacity>
+			</View>
 			<View style={styles.separator}></View>
 
-			<TouchableOpacity onPress={() => screenButton('GroupsPage')} style={styles.navButtonContainer}>
+			<View style={styles.navButtonContainer}>
 				<Text style={styles.buttonText}>Groups</Text>
-			</TouchableOpacity>
+			</View>
 			<View style={styles.separator}></View>
 
-			<TouchableOpacity onPress={() => screenButton('ActivitiesPage')} style={styles.navButtonContainer}>
+			<View style={styles.navButtonContainer}>
 				<Text style={styles.buttonText}>Activities</Text>
-			</TouchableOpacity>
+			</View>
 			<View style={styles.separator}></View>
 
 		</View>
