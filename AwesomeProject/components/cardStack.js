@@ -2,15 +2,50 @@ import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, Animated, PanResponder, Image, Dimensions } from 'react-native';
 import groupStyles from './groupPageStyle';
 import addIcon from '../assets/addIcon.png';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import switchIcon from '../assets/3DSwitch.png';
+import anxiety7 from '../assets/Anxiety8.png';
+import anxiety4 from '../assets/Anxiety5.png';
+import anxiety5 from '../assets/Anxiety6.png';
+import MoodIcon from './moodIcon.js';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 console.log('SCREEN_WIDTH:', SCREEN_WIDTH);
 
 const CardStack = () => {
+
+
+    const [anxiety, setAnxiety] = React.useState(anxiety4)
+
+    const [happiness, setHappiness] = React.useState('#FFEBB5')
+    
+    const [energy, setEnergy] = React.useState(0.7)
+
+    const oliviaMoodIcon = (
+        <View style={groupStyles.cardMoodIcon}>
+          <MoodIcon
+            size={40}
+            happiness="#FFAAA5"  
+            energy={0.8}         
+            anxiety={anxiety7}   
+          />
+        </View>  
+    );
+
+    const myMoodIcon = (
+        <View style={groupStyles.cardMoodIcon}>
+          <MoodIcon
+            size={40}
+            happiness="#FF8B94"  
+            energy={0.3}         
+            anxiety={anxiety5}   
+          />
+        </View>  
+    );
+
+
   const [cards, setCards] = useState([
-    { text: 'Card 1', translateX: new Animated.Value(0), zIndex: 2 },
-    { text: 'Card 2', translateX: new Animated.Value(0), zIndex: 1 },
+    { text: 'Movie Night', translateX: new Animated.Value(0), zIndex: 2 },
+    { text: 'Boardgames', translateX: new Animated.Value(0), zIndex: 1 },
     { text: 'Propose Activity', translateX: new Animated.Value(0), zIndex: 0 },
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,8 +93,11 @@ const CardStack = () => {
                 });
     
                 // Reset the horizontal position
-                shuffledCard.translateX.setValue(0);
-                console.log('Reset translateX to 0:', shuffledCard.translateX._value);
+                Animated.timing(shuffledCard.translateX, {
+                    toValue: 0,
+                    duration: 500, // Adjust the duration as needed
+                    useNativeDriver: false,
+                  }).start();
     
                 // Set zIndex to the length of the newCards array
                 shuffledCard.zIndex = 0;
@@ -102,17 +140,19 @@ const CardStack = () => {
       borderColor: 'black',
     };
 
-    return index === currentIndex
-      ? {
-          ...baseStyle,
-          backgroundColor: '#C0EDDA',
-          marginTop: 1,
-        }
-      : {
-          ...baseStyle,
-          backgroundColor: 'white',
-        };
-  };
+    const currentCard = cards[index];
+
+  return index === currentIndex
+    ? {
+        ...baseStyle,
+        backgroundColor: currentCard.text === 'Propose Activity' ? '#C0EDDA' : 'white',
+        marginTop: 1,
+      }
+    : {
+        ...baseStyle,
+        backgroundColor: currentCard.text === 'Propose Activity' ? '#C0EDDA' : 'white',
+      };
+    };
 
   return (
     <View style={styles.cardStack}>
@@ -125,8 +165,8 @@ const CardStack = () => {
             { transform: [{ translateX: card.translateX }], zIndex: card.zIndex },
           ]}
           {...panResponder.panHandlers}
-        >
-          {index === 2 && (
+          >
+          {card.text === 'Propose Activity' && (
             <View>
               <Text style={groupStyles.proposeActivityText}>
                 Propose{'\n'}Activity
@@ -134,8 +174,37 @@ const CardStack = () => {
               <Image source={addIcon} style={groupStyles.addIcon} />
             </View>
           )}
-          {index !== 2 && (
-            <Text style={styles.cardText}>{card.text}</Text>
+          {card.text == 'Movie Night' && (
+            <View style={groupStyles.movieNightCard}>
+            <Text style={groupStyles.movieNightTitle}>Movie Night</Text>
+            <Text style={groupStyles.proposedByText}>Proposed by</Text>
+            <View style={groupStyles.proposerInfo}>
+              {oliviaMoodIcon}
+            </View>
+              <Text style={groupStyles.proposerName}>Olivia</Text>
+            <View style={groupStyles.dateTimeLocation}>
+              <Text style={groupStyles.dateTimeLocationText}>Today</Text>
+              <Text style={groupStyles.dateTimeLocationText}>10:00 PM</Text>
+              <Text style={groupStyles.dateTimeLocationText}>Hogan Suite 2A</Text>
+            </View>
+            <Image source={switchIcon} style={groupStyles.switchIcon} />
+          </View>
+          )}
+          {card.text == 'Boardgames' && (
+            <View style={groupStyles.movieNightCard}>
+            <Text style={groupStyles.movieNightTitle}>Boardgames</Text>
+            <Text style={groupStyles.proposedByText}>Proposed by</Text>
+            <View style={groupStyles.proposerInfo}>
+              {myMoodIcon}
+            </View>
+              <Text style={groupStyles.proposerName}>Me</Text>
+            <View style={groupStyles.dateTimeLocation}>
+              <Text style={groupStyles.dateTimeLocationText}>Tomorrow</Text>
+              <Text style={groupStyles.dateTimeLocationText}>9:00 PM</Text>
+              <Text style={groupStyles.dateTimeLocationText}>Ruggles Suite 6B</Text>
+            </View>
+            <Image source={switchIcon} style={groupStyles.switchIcon} />
+            </View>
           )}
         </Animated.View>
       ))}
@@ -145,6 +214,7 @@ const CardStack = () => {
 
 const styles = StyleSheet.create({
   cardStack: {
+    top: 126,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -91,90 +91,90 @@ const groupStyles = StyleSheet.create({
     oliviaMoodIconText: {
         fontSize: 18,
         textAlign: 'center',
-        marginTop: -296,
+        top: -240,
     },
 
     oliviaMoodIconContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        top: -326, 
+        top: -270, 
         height: 0,
     },
 
     benMoodIconText: {
         fontSize: 18,
-        marginTop: -212,
+        top: -184,
         left: 301,
     },
     
     benMoodIconContainer: {
         justifyContent: 'center',
         left: 276,
-        top: -242, 
+        top: -214, 
         height: 0,
     },
     
     justinMoodIconText: {
         fontSize: 18,
-        marginTop: -222,
+       top: -216,
         left: 14
     },
     
     justinMoodIconContainer: {
         justifyContent: 'center',
-        top: -252, 
+        top: -246, 
         height: 0,
         right: 4,
     },
 
     mayaMoodIconText: {
         fontSize: 18,
-        marginTop: -102,
+        top: -110,
         left: 304,
     },
     
     mayaMoodIconContainer: {
         justifyContent: 'center',
         left: 284,
-        top: -132, 
+        top: -140, 
         height: 0,
     },
 
     jacobMoodIconText: {
         fontSize: 18,
-        marginTop: -107,
+        top: -141,
         left: 0
     },
     
     jacobMoodIconContainer: {
         justifyContent: 'center',
-        top: -137, 
+        top: -171, 
         height: 0,
         right: 17,
     },
 
     charlieMoodIconText: {
         fontSize: 18,
-        marginTop: 8,
+        top: -36,
         left: 288,
     },
     
     charlieMoodIconContainer: {
         justifyContent: 'center',
         left: 276,
-        top: -22, 
+        top: -66, 
         height: 0,
     },
 
     anishMoodIconText: {
         fontSize: 18,
-        marginTop: -32,
+        top: -66,
         left: 16
     },
     
     anishMoodIconContainer: {
         justifyContent: 'center',
-        top: -62, 
+        top: -96, 
         height: 0,
         right: 4,
     },
@@ -182,15 +182,64 @@ const groupStyles = StyleSheet.create({
     myMoodIconText: {
         fontSize: 18,
         textAlign: 'center',
-        marginTop: 33,
+        top: -30,
     },
     
     myMoodIconContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        top: 3, 
+        top: -60, 
         height: 0,
     },
+
+    movieNightCard: {
+        padding: 12,
+        backgroundColor: 'white',
+        borderRadius: 15,
+      },
+      movieNightTitle: {
+        fontSize: 16,
+        textAlign: 'center',
+      },
+      proposedByText: {
+        fontSize: 14,
+        marginTop: 8,
+        textAlign: 'center',
+      },
+      proposerInfo: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 8,
+      },
+      proposerIcon: {
+        width: 20,
+        height: 20,
+        marginRight: 8,
+      },
+      proposerName: {
+        top:-3,
+        fontSize: 12,
+        alignSelf: 'center',
+      },
+      dateTimeLocation: {
+        marginTop: 2,
+      },
+      dateTimeLocationText: {
+        fontSize: 13,
+        top: 2,
+      },
+      switchIcon: {
+        width: 40,
+        height: 16,
+        alignSelf: 'center',
+        top: 12,
+      },
+
+      cardMoodIcon: {
+        top: -3,
+        alignSelf: 'center',
+        left: 36,
+      }
 
 
  })
