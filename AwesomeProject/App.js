@@ -33,7 +33,7 @@ const App = () => {
 		}
 
 		else if (page == 'GroupsPage') {
-			return <ActivityRsvpPopupMain/>
+			return <MyGroups/>
 		}
 
 		else if (page == 'ActivitiesPage') {
