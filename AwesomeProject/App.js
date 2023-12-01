@@ -9,6 +9,7 @@ import ProposalPopupMain from './components/proposalPopupMain';
 import RecentLogs from './components/recentLogs';
 import ProfilePage from './components/profilePage';
 import MyGroups from './components/myGroups';
+import ActivitiesPage from './components/activitiesPage';
 
 /** This is the backbone code for our app.
 	The NavBar will be on every page.
@@ -37,7 +38,7 @@ const App = () => {
 		}
 
 		else if (page == 'ActivitiesPage') {
-			return <ProposalPopupMain/>
+			return <ActivitiesPage screenChoose={screenChoose}/>
 		}
 
 		else if (page == 'ProfilePage') {
