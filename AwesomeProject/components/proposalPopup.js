@@ -30,8 +30,12 @@ const ProposalPopup = ({ visible, onClose }) => {
 	const [date, setDate] = useState('Today')
 
 	//activates when x-icon is pressed
-	function sendProposal() {
-
+	const sendProposal = () => {
+		onClose()
+		setActivity('')
+		setTime(new Date())
+		setLocation('')
+		setNotes('')
 	}
 
 	const changeDate = () => {
@@ -72,7 +76,8 @@ const ProposalPopup = ({ visible, onClose }) => {
 									<TextInput 
 									onChangeText={(value) => setActivity(value)}
 									value={activity}
-									style={styles.input}/>
+									style={styles.input}
+									returnKeyType={'done'} />
 								</View>
 							</View>
 							<View style={styles.containers}>
@@ -94,7 +99,8 @@ const ProposalPopup = ({ visible, onClose }) => {
 									<TextInput 
 									onChangeText={(value) => setLocation(value)}
 									value={location}
-									style={styles.input}/>
+									style={styles.input}
+									returnKeyType={'done'} />
 								</View>
 							</View>
 							<View style={styles.notesContainer}>
@@ -103,11 +109,13 @@ const ProposalPopup = ({ visible, onClose }) => {
 									<TextInput 
 									onChangeText={(value) => setNotes(value)}
 									value={notes}
-									multiline style={styles.notesInput} />
+									multiline style={styles.notesInput}
+									returnKeyType={'done'}
+									blurOnSubmit={true}  />
 								</View>
 							</View>
 							<View style={styles.sendContainer}>
-								<TouchableOpacity onPress={onClose}
+								<TouchableOpacity onPress={sendProposal}
 								style={styles.sendProposal}>
 									<Text style={styles.sendText}>Send Proposal</Text>
 								</TouchableOpacity>
