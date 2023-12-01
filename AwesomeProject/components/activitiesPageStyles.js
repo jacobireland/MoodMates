@@ -9,19 +9,12 @@ const styles = StyleSheet.create({
     headingContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 20
-    },
-
-    backArrow: {
-        width: 27,
-        height: 27,
+        marginBottom: 30
     },
 
     actHeading: {
         fontSize: 35,
-        margin: 70,
-        marginBottom: 0,
-        marginTop: 0
+		marginRight: 180,
     },
 
     plus: {
@@ -30,7 +23,8 @@ const styles = StyleSheet.create({
     },
 
     propsContainer: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+		marginBottom: 25
     
     },
 
@@ -38,12 +32,19 @@ const styles = StyleSheet.create({
         fontSize: 24,
         width: 230,
         height: 30,
-        marginBottom: 15
+        marginBottom: 15,
+		fontWeight: '500'
     },
 
     gName: {
         fontSize: 18,
-        marginBottom:10
+        marginBottom: 10,
+		marginTop: 20,
+    },
+
+	gNameMovie: {
+        fontSize: 18,
+        marginBottom: 10,
     },
 
     activityContainer: {
