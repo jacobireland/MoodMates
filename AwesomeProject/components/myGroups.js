@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Text, View, Button, ScrollView, Image, TouchableOpacity, Modal, Switch } from 'react-native';
 import styles from './myGroupsStyles'
-const MyGroups = () => {
+const MyGroups = ({screenChoose}) => {
 
     return (
         <View style={styles.mainContainer}>
@@ -13,7 +13,7 @@ const MyGroups = () => {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>Track Team</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity onPress={() => screenChoose('MovieSquadGroup')} style={styles.button}>
                     <Text style={styles.buttonText}>Movie Squad</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>

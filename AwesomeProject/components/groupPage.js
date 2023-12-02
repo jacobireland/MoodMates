@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Text, View, Image, TextInput } from 'react-native'; 
+import { Text, View, Image, TextInput, TouchableOpacity } from 'react-native'; 
 import groupStyles from './groupPageStyle.js';
 import backArrowIcon from '../assets/backArrowIcon.png';
 import settingsIcon from '../assets/settingsIcon.png';
@@ -18,7 +18,7 @@ import addIcon from '../assets/addIcon.png';
 
 
 
-const GroupPage = () => {
+const GroupPage = ({screenChoose}) => {
 
 const [anxiety, setAnxiety] = React.useState(anxiety4)
 
@@ -254,10 +254,12 @@ const myText = (
 );
 
 return (
-	<View style={groupStyles.container}>
+	<View style={groupStyles.container}> 
 
         <View style={groupStyles.headerContainer}>
-                <Image source={backArrowIcon} style={groupStyles.icon} />
+				<TouchableOpacity onPress={() => screenChoose('GroupsPage')}>
+                	<Image source={backArrowIcon} style={groupStyles.icon} />
+				</TouchableOpacity>
                 <Text style={groupStyles.headerText}>Movie Squad</Text>
                 <Image source={settingsIcon} style={groupStyles.icon} />
         </View>

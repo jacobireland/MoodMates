@@ -39,7 +39,7 @@ const App = () => {
 		}
 
 		else if (page == 'GroupsPage') {
-			return <MyGroups/>
+			return <MyGroups screenChoose={screenChoose}/>
 		}
 
 		else if (page == 'ActivitiesPage') {
@@ -54,6 +54,9 @@ const App = () => {
 			return <RecentLogs/>
 		}
 
+		else if (page == 'MovieSquadGroup') {
+			return <GroupPage screenChoose={screenChoose}/>
+		}
 		else {
 			return <MoodPage screenChoose={screenChoose}/>
 		}

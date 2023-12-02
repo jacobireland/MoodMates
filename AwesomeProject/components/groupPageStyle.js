@@ -3,7 +3,6 @@ import {StyleSheet} from 'react-native'
 const groupStyles = StyleSheet.create({
     container: {
 		flex: 1,
-		backgroundColor: 'lightgray',
 	},
 
     appContent: {
@@ -37,7 +36,7 @@ const groupStyles = StyleSheet.create({
         height: 93,
         marginTop: 25,
         borderRadius: 15,
-        backgroundColor: 'lightgray', // Set your desired background color
+        backgroundColor: 'darkgray', // Set your desired background color
         alignSelf: 'center',
         borderWidth: 1,
         borderColor: 'black',
