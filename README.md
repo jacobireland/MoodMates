@@ -7,7 +7,7 @@ Getting Started:
 
 2) cd to AwesomeProject
 
-3) run "npx install expo" and "npm i --save react-native-sliders" and "npx expo install expo-blur"
+3) run "npm install expo" and "npm i --save react-native-sliders" and "npx expo install expo-blur"
 
 4) download expo go app on your phone (make sure phone and computer are connected to the same wifi network)
 
@@ -83,8 +83,20 @@ For creating pop-up modal to enter diary text: https://blog.logrocket.com/creati
 
 For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sliders
 
+For creating Recent Logs: https://stackoverflow.com/questions/50556937/how-do-i-make-text-bold-italic-or-underline-in-react-native
 
 
 
+
+
+
+
+
+pip install -U flask-cors
+npm install @react-navigation/native
+npm install @react-navigation/stack
+npm install backendless
+npx expo install --fix
+npm install react-native-gesture-handler
 
 

@@ -1,13 +1,20 @@
 import React from 'react';
 import { View, TextInput, Button, Text, TouchableOpacity } from 'react-native';
 import styles from './style';
-import Mood from './components/mood';
 import NavBar from './components/navBar';
 import Greeting from './components/greeting';
 import DiaryEntry from './components/diaryEntry';
 import GroupPage from './components/groupPage';
 import groupStyles from './components/groupPageStyle'; 
 
+import MoodPage from './components/moodPage';
+import FlaskTester from './components/flaskTester';
+import ActivityRsvpPopupMain from './components/activityRsvpPopupMain';
+import ProposalPopupMain from './components/proposalPopupMain';
+import RecentLogs from './components/recentLogs';
+import ProfilePage from './components/profilePage';
+import MyGroups from './components/myGroups';
+import ActivitiesPage from './components/activitiesPage';
 
 /** This is the backbone code for our app.
 	The NavBar will be on every page.
@@ -20,6 +27,38 @@ import groupStyles from './components/groupPageStyle';
 
 const App = () => {
 
+	const [page, setPage] = React.useState('MoodPage')
+
+	const screenChoose = (screen) => {
+		setPage(screen)
+	};
+
+	const screenRender = () => {
+		if (page == 'MoodPage') {
+			return <MoodPage screenChoose={screenChoose}/>
+		}
+
+		else if (page == 'GroupsPage') {
+			return <MyGroups/>
+		}
+
+		else if (page == 'ActivitiesPage') {
+			return <ActivitiesPage screenChoose={screenChoose}/>
+		}
+
+		else if (page == 'ProfilePage') {
+			return <ProfilePage screenChoose={screenChoose}/>
+		}
+
+		else if (page == 'RecentLogs') {
+			return <RecentLogs/>
+		}
+
+		else {
+			return <MoodPage screenChoose={screenChoose}/>
+		}
+	}
+
 	return (
 	
 		<View style={styles.container}>
@@ -28,15 +67,15 @@ const App = () => {
 				{/* replace this with your page export
 				i.e.: <your_page_export_name/> to be able to see your
 				code in the Expo Go app */}
-				<GroupPage/>
 
+				{screenRender()}
 			</View>
 		
-		{/* Component for our nav bar,
-		defined in /components/navBar.js */}
-		<NavBar/>
+			{/* Component for our nav bar,
+			defined in /components/navBar.js */}
+			<NavBar screenChoose={screenChoose}/>
 		
-	</View>
+		</View>
 		
 )}
 
