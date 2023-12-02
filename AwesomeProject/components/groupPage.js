@@ -20,102 +20,33 @@ import addIcon from '../assets/addIcon.png';
 
 const GroupPage = ({screenChoose}) => {
 
+const [userAnxiety, setUserAnxiety] = React.useState(anxiety4)
+
+const [userHappiness, setUserHappiness] = React.useState('#FFEBB5')
+
+const [userEnergy, setUserEnergy] = React.useState(0.7)
+
+const onError = error => {
+	console.error('Server reported an error: ', error.message)
+	console.error('error code: ', error.code)
+	console.error('http status: ', error.status)
+}
+
+const setUserMood = (userMood) => {
+	setUserHappiness(`${ userMood.userHappiness }`)
+	setUserEnergy(parseFloat(`${ userMood.userEnergy }`))
+	anxietyPicker(`${ userMood.userAnxiety }`)
+}
+
+Backendless.Data.of('UserMood').findLast()
+	.then(setUserMood)
+	.catch(onError)
+
 const [anxiety, setAnxiety] = React.useState(anxiety4)
 
 const [happiness, setHappiness] = React.useState('#FFEBB5')
 
 const [energy, setEnergy] = React.useState(0.7)
-
-
-function happinessSetter(value) {
-    if (value == 0) {
-        setHappiness('#FF7480')
-    }
-    if (value == 1) {
-        setHappiness('#FF8B94')
-    }
-    if (value == 2) {
-        setHappiness('#FFAAA5')
-    }
-    if (value == 3) {
-        setHappiness('#FFD3B6')
-    }
-    if (value == 4) {
-        setHappiness('#FFEBB5')
-    }
-    if (value == 5) {
-        setHappiness('#DCECD1')
-    }
-    if (value == 6) {
-        setHappiness('#CFEDC0')
-    }
-    if (value == 7) {
-        setHappiness('#BDE6A8')
-    }
-    if (value == 8) {
-        setHappiness('#97E384')
-    }
-}
-
-function energySetter(value) {
-    if (value == 0) {
-        setEnergy(0.4)
-    }
-    if (value == 1) {
-        setEnergy(0.48)
-    }
-    if (value == 2) {
-        setEnergy(0.56)
-    }
-    if (value == 3) {
-        setEnergy(0.64)
-    }
-    if (value == 4) {
-        setEnergy(0.70)
-    }
-    if (value == 5) {
-        setEnergy(0.78)
-    }
-    if (value == 6) {
-        setEnergy(0.84)
-    }
-    if (value == 7) {
-        setEnergy(0.90)
-    }
-    if (value == 8) {
-        setEnergy(1.0)
-    }
-}
-
-function anxietySetter(value) {
-    if (value == 0) {
-        setAnxiety(anxiety0)
-    }
-    if (value == 1) {
-        setAnxiety(anxiety1)
-    }
-    if (value == 2) {
-        setAnxiety(anxiety2)
-    }
-    if (value == 3) {
-        setAnxiety(anxiety3)
-    }
-    if (value == 4) {
-        setAnxiety(anxiety4)
-    }
-    if (value == 5) {
-        setAnxiety(anxiety5)
-    }
-    if (value == 6) {
-        setAnxiety(anxiety6)
-    }
-    if (value == 7) {
-        setAnxiety(anxiety7)
-    }
-    if (value == 8) {
-        setAnxiety(anxiety8)
-    }
-}
 
 const oliviaMoodIcon = (
     <View style={groupStyles.oliviaMoodIconContainer}>
@@ -240,9 +171,9 @@ const myMoodIcon = (
     <View style={groupStyles.myMoodIconContainer}>
         <MoodIcon
             size={85}
-            happiness="#FF8B94"  
-            energy={0.3}         
-            anxiety={anxiety5}   
+            happiness={userHappiness}  
+            energy={userEnergy}         
+            anxiety={userAnxiety}   
         />
     </View>  
 );

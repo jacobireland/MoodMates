@@ -18,8 +18,23 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20
     },
-    button: {
-        color: '#8BC7AF',
+    buttonTrack: {
+        alignItems: 'center',
+        padding: 20,
+        borderRadius: 5,
+        margin: 10,
+        width: 300,
+        backgroundColor:'lightblue'
+    },
+	buttonMovie: {
+        alignItems: 'center',
+        padding: 20,
+        borderRadius: 5,
+        margin: 10,
+        width: 300,
+        backgroundColor:'lightpink'
+    },
+	buttonBoys: {
         alignItems: 'center',
         padding: 20,
         borderRadius: 5,
