@@ -28,8 +28,6 @@ const Mood = () => {
 
 	const [energy, setEnergy] = React.useState(0.7)
 
-
-
 	//save user mood to backend
 
 	const saveToBackend = async () => {
@@ -49,6 +47,7 @@ const Mood = () => {
 			console.error('Error saving to Backendless:', error);
 		}
 	};
+
 
 	//takes the value of the happiness slider and sets the HEX color
 	function happinessSetter(value) {
