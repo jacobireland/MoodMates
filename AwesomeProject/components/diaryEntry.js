@@ -15,7 +15,7 @@ const DiaryEntry = ({ visible, onClose, onSave }) => {
 			// Assuming you have a 'TextInputData' table in Backendless with a 'text' column
 			const dataObject = {
 				text: text,
-				dateMade: new Date(),
+				dateMade: (new Date()).toLocaleTimeString(undefined, {hour: 'numeric', minute: 'numeric'}),
 			};
 		
 			const savedObject = await Backendless.Data.of('DiaryEntries').save(dataObject);
@@ -25,9 +25,6 @@ const DiaryEntry = ({ visible, onClose, onSave }) => {
 			console.error('Error saving to Backendless:', error);
 		}
 	};
-
-
-
 
 	const handleSave = () => {
 	saveToBackend();
