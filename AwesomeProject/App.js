@@ -43,7 +43,7 @@ const App = () => {
 		}
 
 		else if (page == 'ActivitiesPage') {
-			return <ActivitiesPage screenChoose={screenChoose}/>
+			return <ActivitiesPage/>
 		}
 
 		else if (page == 'ProfilePage') {

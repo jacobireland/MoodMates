@@ -16,12 +16,37 @@ import anxiety7 from '../assets/Anxiety8.png';
 import anxiety8 from '../assets/Anxiety9.png';
 import settingsIcon from '../assets/settingsIcon.png';
 import backArrow from '../assets/backArrow.png';
+import Backendless from 'backendless';
 
-
+Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
 const RecentLogs = ({screenPicker}) => {
 
+	const [userEntry, setUserEntry] = React.useState('')
+
+	const [userDate, setUserDate] = React.useState('')
+
+	const onError = error => {
+		console.error('Server reported an error: ', error.message)
+		console.error('error code: ', error.code)
+		console.error('http status: ', error.status)
+	}
+
+	const setUserDiary = (userDiary) => {
+		setUserEntry(`${ userDiary.text }`)
+		setUserDate(`${ userDiary.dateMade }`)
+	}
+
+	Backendless.Data.of('DiaryEntries').findLast()
+		.then(setUserDiary)
+		.catch(onError)
+
 	const entries = [
+		{
+			date: 'Today',
+			time: userDate,
+			entry: userEntry,
+		},
 		{
 			date: 'Yesterday',
 			time: '8:00 AM',

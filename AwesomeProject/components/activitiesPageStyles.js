@@ -9,19 +9,12 @@ const styles = StyleSheet.create({
     headingContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 20
-    },
-
-    backArrow: {
-        width: 27,
-        height: 27,
+        marginBottom: 30
     },
 
     actHeading: {
         fontSize: 35,
-        margin: 70,
-        marginBottom: 0,
-        marginTop: 0
+		marginRight: 180,
     },
 
     plus: {
@@ -30,7 +23,8 @@ const styles = StyleSheet.create({
     },
 
     propsContainer: {
-        flexDirection: 'column'
+        flexDirection: 'column',
+		marginBottom: 25
     
     },
 
@@ -38,22 +32,36 @@ const styles = StyleSheet.create({
         fontSize: 24,
         width: 230,
         height: 30,
-        marginBottom: 15
+        marginBottom: 15,
+		fontWeight: '500'
     },
 
     gName: {
         fontSize: 18,
-        marginBottom:10
+        marginBottom: 10,
+		marginTop: 20,
     },
+
+	gNameMovie: {
+        fontSize: 18,
+        marginBottom: 10,
+    },
+
+	activitiesContainer: {
+		width: '100%',
+		height: 59,
+		marginBottom: 10,
+		flexDirection: 'row',
+		alignItems: 'center',
+	},
 
     activityContainer: {
         width: 227,
         height: 59,
-        marginBottom: 10,
         borderRadius: 8,
         backgroundColor: '#FFFFFF',
         borderColor: '#000000',
-        borderWidth: 1
+        borderWidth: 1,
     },
 
     activity: {
@@ -77,7 +85,30 @@ const styles = StyleSheet.create({
     noActivity: {
         fontStyle: 'italic',
         marginBottom: 10
-    }
+    },
+
+	switchContainer: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		height: 59,
+		flexDirection: 'row',
+		marginLeft: 30,
+		width: 100,
+	},
+
+	switchBox: {
+		width: 90,
+		height: 50,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+
+	switchIcon: {
+		transform: [{scale: 0.25}],
+		margin: 0,
+		padding: 0,
+	},
+
 
 
 })
