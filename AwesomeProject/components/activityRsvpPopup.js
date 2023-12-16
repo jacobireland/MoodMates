@@ -16,7 +16,7 @@ import anxiety7 from '../assets/Anxiety8.png';
 import anxiety8 from '../assets/Anxiety9.png';
 import RSVPSwitch from '../assets/RSVPSwitch.png';
 
-const ActivityRsvpPopup = ({ visible, onClose }) => {
+const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 
 	const [switchEnabled, setSwitchEnabled] = useState(false)	;
 
@@ -24,6 +24,7 @@ const ActivityRsvpPopup = ({ visible, onClose }) => {
 
 	const handleSwitchToggle = () => {
 		setSwitchEnabled(!switchEnabled);
+		rsvpData(toggleEnabled);
 	};
 
 	const handleToggleEnable = () => {

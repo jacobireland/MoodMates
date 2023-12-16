@@ -4,7 +4,7 @@ import styles from './proposalPopupStyles';
 import { BlurView } from 'expo-blur';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import closeIcon from '../assets/closeIcon.png';
-
+ 
 
 const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 

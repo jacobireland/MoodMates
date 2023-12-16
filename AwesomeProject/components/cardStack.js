@@ -7,18 +7,14 @@ import anxiety7 from '../assets/Anxiety8.png';
 import anxiety4 from '../assets/Anxiety5.png';
 import anxiety5 from '../assets/Anxiety6.png';
 import MoodIcon from './moodIcon.js';
+import ProposalPopup from './proposalPopup.js';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 console.log('SCREEN_WIDTH:', SCREEN_WIDTH);
 
 const CardStack = () => {
 
-
-    const [anxiety, setAnxiety] = React.useState(anxiety4)
-
-    const [happiness, setHappiness] = React.useState('#FFEBB5')
-    
-    const [energy, setEnergy] = React.useState(0.7)
+	const [modalVisible, setModalVisible] = React.useState(false);
 
     const oliviaMoodIcon = (
         <View style={groupStyles.cardMoodIcon}>
@@ -113,7 +109,14 @@ const CardStack = () => {
             }
 
           setCards(newCards);
-        } else {
+        } 
+
+		else if (Math.abs(dx) == 0 && Math.abs(vx) == 0) {
+			console.log("registered click")
+			setModalVisible(true)
+		}
+		
+		else {
           // Reset the card position
           console.log('Resetting Position (No Swipe)');
           const newCards = cards.map((card, index) => ({
@@ -208,6 +211,11 @@ const CardStack = () => {
           )}
         </Animated.View>
       ))}
+	  <ProposalPopup
+				visible={modalVisible}
+				onClose={() => setModalVisible(false)}
+				proposedActivity={console.log("hey")}
+	  />
     </View>
   );
 };

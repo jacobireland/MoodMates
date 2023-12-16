@@ -24,20 +24,46 @@ const Mood = () => {
 
 	const [anxiety, setAnxiety] = React.useState(anxiety4)
 
+	const [anxietyNum, setAnxietyNum] = React.useState(4)
+
 	const [happiness, setHappiness] = React.useState('#FFEBB5')
 
 	const [energy, setEnergy] = React.useState(0.7)
 
+	/*
+	const [happinessSlider, setHappinessSlider] = React.useState(4)
+
+	const [energySlider, setEnergySlider] = React.useState(4)
+
+	const onError = error => {
+		console.error('Server reported an error: ', error.message)
+		console.error('error code: ', error.code)
+		console.error('http status: ', error.status)
+	}
+	
+	const setUserMood = (userMood) => {
+		happinessSliderPicker(`${ userMood.userHappiness }`)
+		setEnergy(parseFloat(`${ userMood.userEnergy }`))
+		anxietyPicker(`${ userMood.userAnxiety }`)
+	}
+	React.useEffect(() => {
+		// Your function or code here will run only on component mount
+		Backendless.Data.of('UserMood').findLast()
+			.then(setUserMood)
+			.catch(onError)
+	  }, []);
+	  */
+
 	//save user mood to backend
 
 	const saveToBackend = async () => {
+		console.log(anxietyNum)
 
 		try {
-			// Assuming you have a 'TextInputData' table in Backendless with a 'text' column
 			const dataObject = {
 				userHappiness: happiness,
 				userEnergy: energy,
-				userAnxiety: anxiety,
+				userAnxiety: anxietyNum,
 			};
 		
 			const savedObject = await Backendless.Data.of('UserMood').save(dataObject);
@@ -48,9 +74,44 @@ const Mood = () => {
 		}
 	};
 
+	/*
+	function happinessSliderPicker(value) {
+
+		setHappiness(value)
+
+		if (value == '#FF7480') {
+			setHappinessSlider(0)
+		}
+		if (value == '#FF8B94') {
+			setHappinessSlider(1)
+		}
+		if (value == '#FFAAA5') {
+			setHappinessSlider(2)
+		}
+		if (value == '#FFD3B6') {
+			setHappinessSlider(3)
+		}
+		if (value == '#FFEBB5') {
+			setHappinessSlider(4)
+		}
+		if (value == '#DCECD1') {
+			setHappinessSlider(5)
+		}
+		if (value == '#CFEDC0') {
+			setHappinessSlider(6)
+		}
+		if (value == '#BDE6A8') {
+			setHappinessSlider(7)
+		}
+		if (value == '#97E384') {
+			setHappinessSlider(8)
+		}
+	}
+	*/
 
 	//takes the value of the happiness slider and sets the HEX color
 	function happinessSetter(value) {
+
 		if (value == 0) {
 			setHappiness('#FF7480')
 		}
@@ -115,31 +176,43 @@ const Mood = () => {
 
 	//takes the value of the anxiety slider and sets the image for anxiety squiggles
 	function anxietySetter(value) {
+
+		setAnxietyNum(0)
+
 		if (value == 0) {
+			setAnxietyNum(0)
 			setAnxiety(anxiety0)
 		}
 		if (value == 1) {
+			setAnxietyNum(1)
 			setAnxiety(anxiety1)
 		}
 		if (value == 2) {
+			setAnxietyNum(2)
 			setAnxiety(anxiety2)
 		}
 		if (value == 3) {
+			setAnxietyNum(3)
 			setAnxiety(anxiety3)
 		}
 		if (value == 4) {
+			setAnxietyNum(4)
 			setAnxiety(anxiety4)
 		}
 		if (value == 5) {
+			setAnxietyNum(5)
 			setAnxiety(anxiety5)
 		}
 		if (value == 6) {
+			setAnxietyNum(6)
 			setAnxiety(anxiety6)
 		}
 		if (value == 7) {
+			setAnxietyNum(7)
 			setAnxiety(anxiety7)
 		}
 		if (value == 8) {
+			setAnxietyNum(8)
 			setAnxiety(anxiety8)
 		}
 

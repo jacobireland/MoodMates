@@ -26,6 +26,38 @@ const [userHappiness, setUserHappiness] = React.useState('#FFEBB5')
 
 const [userEnergy, setUserEnergy] = React.useState(0.7)
 
+//takes the value of the anxiety slider and sets the image for anxiety squiggles
+function anxietyPicker(value) {
+	if (value == 0) {
+		setAnxiety(anxiety0)
+	}
+	if (value == 1) {
+		setAnxiety(anxiety1)
+	}
+	if (value == 2) {
+		setAnxiety(anxiety2)
+	}
+	if (value == 3) {
+		setAnxiety(anxiety3)
+	}
+	if (value == 4) {
+		setAnxiety(anxiety4)
+	}
+	if (value == 5) {
+		setAnxiety(anxiety5)
+	}
+	if (value == 6) {
+		setAnxiety(anxiety6)
+	}
+	if (value == 7) {
+		setAnxiety(anxiety7)
+	}
+	if (value == 8) {
+		setAnxiety(anxiety8)
+	}
+
+}
+
 const onError = error => {
 	console.error('Server reported an error: ', error.message)
 	console.error('error code: ', error.code)
@@ -171,9 +203,9 @@ const myMoodIcon = (
     <View style={groupStyles.myMoodIconContainer}>
         <MoodIcon
             size={85}
-            happiness={userHappiness}  
+            happiness={userHappiness}
             energy={userEnergy}         
-            anxiety={userAnxiety}   
+            anxiety={anxiety}
         />
     </View>  
 );

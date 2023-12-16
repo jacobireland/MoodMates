@@ -9,7 +9,7 @@ import DiaryEntry from './diaryEntry';
 const MoodPage = ({screenChoose}) => {
 
 	const [modalVisible, setModalVisible] = React.useState(false);
-	const [enteredText, setEnteredText] = React.useState('Today I feel...');
+	const [enteredText, setEnteredText] = React.useState("Today I'm feeling...");
 
 	const handleSaveText = (text) => {
 		setEnteredText(text);}

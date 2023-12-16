@@ -69,6 +69,11 @@ const ActivitiesPage = () => {
 		return myProposals
 	}
 
+	const rsvpData = (value) => {
+		console.log(value),
+		setSwitchMovieEnabled(value)
+	}
+
 	const proposedActivity = (activity, date, time, location, notes) => {
 
 		if (activity) {
@@ -142,6 +147,7 @@ const ActivitiesPage = () => {
 			<ActivityRsvpPopup
 				visible={modalRsvpVisible}
 				onClose={() => setModalRsvpVisible(false)}
+				rsvpData={rsvpData}
 			/>
             
             {/* My Proposals Section */}

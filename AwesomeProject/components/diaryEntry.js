@@ -29,7 +29,7 @@ const DiaryEntry = ({ visible, onClose, onSave }) => {
 	const handleSave = () => {
 	saveToBackend();
 	onSave(determineText(text));
-	setText(text);
+	setText('');
 	onClose();
 	};
 
@@ -38,7 +38,7 @@ const DiaryEntry = ({ visible, onClose, onSave }) => {
 			return "Today I'm feeling..."
 		}
 		else {
-			return userText
+			return "Today I'm feeling..."
 		}
 	}
 
