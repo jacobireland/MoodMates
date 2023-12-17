@@ -9,7 +9,7 @@ import ProposalPopup from './proposalPopup';
 import Backendless from 'backendless';
 import ActivityRsvpPopup from './activityRsvpPopup';
 import RSVPSwitch from '../assets/RSVPSwitch.png';
-import { useTheme } from './themeContext';
+import CustomText from './customText';
 
 Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
@@ -17,8 +17,6 @@ Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-
 const ActivitiesPage = () => {
 
 	const styles = Styles();
-
-	const { theme } = useTheme();
 
 	const [switchMovieEnabled, setSwitchMovieEnabled] = useState(false)	;
 
@@ -68,7 +66,7 @@ const ActivitiesPage = () => {
 
 	const [modalRsvpVisible, setModalRsvpVisible] = React.useState(false);
 
-	const [myProposals, setMyProposals] = React.useState([<Text key={'noproposals'} style={[styles.noActivity, { color: theme.textColor }]}>No Proposals!</Text>])
+	const [myProposals, setMyProposals] = React.useState([<CustomText key={'noproposals'} style={styles.noActivity}>No Proposals!</CustomText>])
 
 	const showProposals = () => {
 		return myProposals
@@ -88,7 +86,7 @@ const ActivitiesPage = () => {
 						<View key={date} style={styles.activitiesContainer}>
 							<TouchableOpacity style={styles.activityContainer}>
 								<View style={styles.activity}>
-									<Text style={styles.actTitle}>{activity}</Text>
+									<CustomText style={styles.actTitle}>{activity}</CustomText>
 									<Image
 									style={styles.infoIcon}
 									source={infoIcon}
@@ -96,9 +94,9 @@ const ActivitiesPage = () => {
 								</View>
 
 								<View style={styles.activityInfo}>
-									<Text style={styles.actDate}>{date}, {time.toLocaleTimeString(undefined, {hour: 'numeric', minute: 'numeric'})}
-									</Text>
-									<Text style={styles.actName}>Me</Text>
+									<CustomText style={styles.actDate}>{date}, {time.toLocaleTimeString(undefined, {hour: 'numeric', minute: 'numeric'})}
+									</CustomText>
+									<CustomText style={styles.actName}>Me</CustomText>
 								</View>
 							</TouchableOpacity>
 							<View style={styles.switchContainer}>
@@ -133,11 +131,11 @@ const ActivitiesPage = () => {
             {/* Activity Page Heading */}
             <View style={styles.headingContainer}>
 			
-                <Text style={[styles.actHeading, { color: theme.textColor }]}>Activities</Text>
+                <CustomText style={styles.actHeading}>Activities</CustomText>
                 
 				<TouchableOpacity onPress={() => setModalVisible(true)}>
 					<Image
-					style={[styles.plus, { tintColor: theme.textColor }]}
+					style={styles.plus}
 					source={plus}
 					/>
 				</TouchableOpacity>
@@ -157,7 +155,7 @@ const ActivitiesPage = () => {
             
             {/* My Proposals Section */}
             <View style={styles.propsContainer}>
-                <Text style={styles.propTitle}>My Proposals</Text>
+                <CustomText style={styles.propTitle}>My Proposals</CustomText>
                 {/* My Proposals Activities*/}
                 <View style={styles.propActivities}>
                     {/* My Activity 1*/}
@@ -169,17 +167,17 @@ const ActivitiesPage = () => {
 
             {/* Group Proposals Section */}
             <View style={styles.propsContainer}>
-                <Text style={styles.propTitle}>Groups' Proposals </Text>
+                <CustomText style={styles.propTitle}>Groups' Proposals </CustomText>
                 {/* Group Proposals Activities*/}
                 <View style={styles.propActivities}>
                     {/* Group 1 Activities*/}
                     <View style={styles.gActivities}>
-						<Text style={[styles.gNameMovie, { color: theme.textColor }]}>Movie Squad</Text>
+						<CustomText style={styles.gNameMovie}>Movie Squad</CustomText>
                         {/* Group 1 Activity 1*/}
 						<View style={styles.activitiesContainer}>
 							<TouchableOpacity style={styles.activityContainer} onPress={() => setModalRsvpVisible(true)}>
 								<View style={styles.activity}>
-									<Text style={styles.actTitle}>Movie Night</Text>
+									<CustomText style={styles.actTitle}>Movie Night</CustomText>
 									<Image
 									style={styles.infoIcon}
 									source={infoIcon}
@@ -187,8 +185,8 @@ const ActivitiesPage = () => {
 								</View>
 
 								<View style={styles.activityInfo}>
-									<Text style={styles.actDate}>Tonight, 10:00pm</Text>
-									<Text style={styles.actName}>Olivia</Text>
+									<CustomText style={styles.actDate}>Tonight, 10:00pm</CustomText>
+									<CustomText style={styles.actName}>Olivia</CustomText>
 								</View>
 							</TouchableOpacity>
 							<View style={styles.switchContainer}>
@@ -215,7 +213,7 @@ const ActivitiesPage = () => {
 						<View style={styles.activitiesContainer}>
 							<TouchableOpacity style={styles.activityContainer}>
 								<View style={styles.activity}>
-									<Text style={styles.actTitle}>Party in EC</Text>
+									<CustomText style={styles.actTitle}>Party in EC</CustomText>
 									<Image
 									style={styles.infoIcon}
 									source={infoIcon}
@@ -223,8 +221,8 @@ const ActivitiesPage = () => {
 								</View>
 
 								<View style={styles.activityInfo}>
-									<Text style={styles.actDate}>Tmrw, 10:30pm</Text>
-									<Text style={styles.actName}>Anish</Text>
+									<CustomText style={styles.actDate}>Tmrw, 10:30pm</CustomText>
+									<CustomText style={styles.actName}>Anish</CustomText>
 								</View>
 							</TouchableOpacity>
 							<View style={styles.switchContainer}>
@@ -247,14 +245,14 @@ const ActivitiesPage = () => {
                         
                     </View>
 
-                    <Text style={[styles.gName, { color: theme.textColor }]}>Track Team</Text>
+                    <CustomText style={styles.gName}>Track Team</CustomText>
                     <View style={styles.gActivities}>
-                        <Text style={[styles.noActivity, { color: theme.textColor }]}>No Proposals!</Text>
+                        <CustomText style={styles.noActivity }>No Proposals!</CustomText>
                     </View>
 
-                    <Text style={[styles.gName, { color: theme.textColor }]}>The Boys</Text>
+                    <CustomText style={styles.gName }>The Boys</CustomText>
                     <View style={styles.gActivities}>
-                        <Text style={[styles.noActivity, { color: theme.textColor }]}>No Proposals!</Text>
+                        <CustomText style={styles.noActivity}>No Proposals!</CustomText>
                     </View>
                 </View>
                 

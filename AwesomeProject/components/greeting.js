@@ -2,11 +2,9 @@ import React from 'react';
 import { Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../style';
 import profileIcon from '../assets/profileIcon.png';
-import { useTheme } from './themeContext';
+import CustomText from './customText';
 
 const Greeting = ({screenChoose}) => {
-
-	const { theme } = useTheme();
 
 	function greetingSetter() {
 		const hours = new Date().getHours()
@@ -33,22 +31,22 @@ const Greeting = ({screenChoose}) => {
 			<View style={styles.greeting}>
 
 				<View style={styles.greetingProfile}>
-					<Text style={[styles.greetingText, { color: theme.textColor }]}>Good </Text>
+					<CustomText style={styles.greetingText}>Good </CustomText>
 					<View style={styles.greetingWordContainer}>
-						<Text style={[styles.greetingWord, , { color: theme.textColor }]}>{greetingType}</Text>
+						<CustomText style={styles.greetingWord}>{greetingType}</CustomText>
 					</View>
 					<TouchableOpacity onPress={() => screenChoose('ProfilePage')} style={styles.profileIconContainer}>
 						<Image
-						style={[styles.profileIcon, { tintColor: theme.textColor }]}
+						style={styles.profileIcon}
 						source={profileIcon}
 						/>
 					</TouchableOpacity>
 				
 				</View>
-				<Text style={[styles.greetingName, , { color: theme.textColor }]}>Andrea!</Text>
+				<CustomText style={styles.greetingName}>Andrea!</CustomText>
 			</View>
 
-			<Text style={[styles.feelingQuestion, , { color: theme.textColor }]}>How are you feeling today?</Text>
+			<CustomText style={styles.feelingQuestion}>How are you feeling today?</CustomText>
 
 		</View>
 

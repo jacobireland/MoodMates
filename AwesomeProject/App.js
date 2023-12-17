@@ -14,8 +14,9 @@ import RecentLogs from './components/recentLogs';
 import ProfilePage from './components/profilePage';
 import MyGroups from './components/myGroups';
 import ActivitiesPage from './components/activitiesPage';
-import { ThemeProvider } from './components/themeContext';
 import { setCustomText } from 'react-native-global-props';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
 
 /** This is the backbone code for our app.
 	The NavBar will be on every page.
@@ -36,6 +37,7 @@ const customTextProps = {
 };
 
 setCustomText(customTextProps);
+
 
 const App = () => {
 
@@ -76,7 +78,6 @@ const App = () => {
 
 	return (
 	
-		<ThemeProvider>
 			<View style={styles.container}>
 				<View style={styles.appContent}>
 
@@ -92,7 +93,6 @@ const App = () => {
 				<NavBar screenChoose={screenChoose}/>
 			
 			</View>
-		</ThemeProvider>
 		
 )}
 

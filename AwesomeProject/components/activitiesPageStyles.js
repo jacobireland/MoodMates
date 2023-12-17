@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native'
-import { useTheme } from './themeContext';
 
 const Styles = () => {
-
-	const { theme } = useTheme();
 	
 	return StyleSheet.create({
 
@@ -39,7 +36,6 @@ const Styles = () => {
 			height: 30,
 			marginBottom: 15,
 			fontWeight: '500',
-			color: theme.textColor,
 		},
 
 		gName: {

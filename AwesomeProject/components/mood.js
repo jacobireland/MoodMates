@@ -13,13 +13,12 @@ import anxiety7 from '../assets/Anxiety8.png';
 import anxiety8 from '../assets/Anxiety9.png';
 import MoodIcon from './moodIcon';
 import Backendless from 'backendless';
-import { useTheme } from './themeContext';
+import CustomText from './customText';
 
 Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
 const Mood = () => {
 
-	const { theme } = useTheme()
 
 	const primeColor = '#A6CFD5'
 
@@ -236,7 +235,7 @@ const Mood = () => {
 		
 		</View>
 
-		<Text style={[styles.sliderText, { color: theme.textColor}]}>Happiness</Text>
+		<CustomText style={styles.sliderText}>Happiness</CustomText>
 
 		{/* as the user moves the slider,
 		call the function happinessSetter with the current value of the slider
@@ -266,7 +265,7 @@ const Mood = () => {
 		}}
 		/>
 
-		<Text style={[styles.sliderText, { color: theme.textColor }]}>Energy</Text>
+		<CustomText style={styles.sliderText}>Energy</CustomText>
 
 		<Slider
 		onValueChange={value => energySetter(value)}
@@ -293,7 +292,7 @@ const Mood = () => {
 		}}
 		/>
 
-		<Text style={[styles.sliderText, { color: theme.textColor }]}>Anxiety</Text>
+		<CustomText style={styles.sliderText}>Anxiety</CustomText>
 		<Slider
 		value = {4}
 		onValueChange={value => anxietySetter(value)}

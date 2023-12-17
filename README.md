@@ -12,6 +12,8 @@ UI Design Fall '23 Semester Project Team 20 - MoodMates
 	npm install backendless
 	npm install react-native-gesture-handler
 	npm i react-native-global-props --save
+	npx react-native-asset
+	npm install expo-font
 
 
 	*****npx expo install --fix****

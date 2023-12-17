@@ -15,13 +15,9 @@ import anxiety6 from '../assets/Anxiety7.png';
 import anxiety7 from '../assets/Anxiety8.png';
 import anxiety8 from '../assets/Anxiety9.png';
 import addIcon from '../assets/addIcon.png';
-import { useTheme } from './themeContext';
-
-
+import CustomText from './customText.js';
 
 const GroupPage = ({screenChoose}) => {
-
-const { theme } = useTheme();
 
 const [userAnxiety, setUserAnxiety] = React.useState(anxiety4)
 
@@ -96,7 +92,7 @@ const oliviaMoodIcon = (
 
 const oliviaText = (
     <View style={groupStyles.moodIconTextContainer}>
-      <Text style={[groupStyles.oliviaMoodIconText, { color: theme.textColor }]}>Olivia</Text>
+      <CustomText style={groupStyles.oliviaMoodIconText }>Olivia</CustomText>
     </View>
 );
 
@@ -113,7 +109,7 @@ const benMoodIcon = (
 
 const benText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.benMoodIconText, { color: theme.textColor }]}>Ben</Text>
+        <CustomText style={groupStyles.benMoodIconText }>Ben</CustomText>
     </View>
 );
 
@@ -130,7 +126,7 @@ const justinMoodIcon = (
 
 const justinText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.justinMoodIconText, { color: theme.textColor }]}>Justin</Text>
+        <CustomText style={groupStyles.justinMoodIconText }>Justin</CustomText>
     </View>
 );
 
@@ -147,7 +143,7 @@ const jacobMoodIcon = (
 
 const jacobText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.jacobMoodIconText, { color: theme.textColor }]}>Jacob</Text>
+        <CustomText style={groupStyles.jacobMoodIconText }>Jacob</CustomText>
     </View>
 );
 
@@ -164,7 +160,7 @@ const mayaMoodIcon = (
 
 const mayaText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.mayaMoodIconText, { color: theme.textColor }]}>Maya</Text>
+        <CustomText style={groupStyles.mayaMoodIconText }>Maya</CustomText>
     </View>
 );
 
@@ -181,7 +177,7 @@ const anishMoodIcon = (
 
 const anishText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.anishMoodIconText, { color: theme.textColor }]}>Anish</Text>
+        <CustomText style={groupStyles.anishMoodIconText }>Anish</CustomText>
     </View>
 );
 
@@ -198,7 +194,7 @@ const charlieMoodIcon = (
 
 const charlieText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.charlieMoodIconText, { color: theme.textColor }]}>Charlie</Text>
+        <CustomText style={groupStyles.charlieMoodIconText }>Charlie</CustomText>
     </View>
 );
 
@@ -215,7 +211,7 @@ const myMoodIcon = (
 
 const myText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={[groupStyles.myMoodIconText, { color: theme.textColor }]}>Me</Text>
+        <CustomText style={groupStyles.myMoodIconText }>Me</CustomText>
     </View>
 );
 
@@ -224,14 +220,14 @@ return (
 
         <View style={groupStyles.headerContainer}>
 				<TouchableOpacity onPress={() => screenChoose('GroupsPage')}>
-                	<Image source={backArrowIcon} style={[groupStyles.icon, { tintColor: theme.textColor }]} />
+                	<Image source={backArrowIcon} style={groupStyles.icon } />
 				</TouchableOpacity>
-                <Text style={[groupStyles.headerText, { color: theme.textColor }]}>Movie Squad</Text>
-                <Image source={settingsIcon} style={[groupStyles.icon, { tintColor: theme.textColor }]} />
+                <CustomText style={groupStyles.headerText }>Movie Squad</CustomText>
+                <Image source={settingsIcon} style={groupStyles.icon } />
         </View>
 
         <View style={groupStyles.rectangle}>
-                <Text style={[groupStyles.groupMoodText, { color: theme.textColor }]}>Group's Current Mood</Text>
+                <CustomText style={groupStyles.groupMoodText }>Group's Current Mood</CustomText>
                 <View style={groupStyles.moodIconContainer}>
                     <MoodIcon size={65} happiness={happiness} energy={energy} anxiety={anxiety}/>
                 </View>
