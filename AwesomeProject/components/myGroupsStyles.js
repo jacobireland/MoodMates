@@ -47,14 +47,19 @@ const styles = StyleSheet.create({
         fontWeight: 400
     },
     imageButton: {
-        width: 100, 
-        height: 100,
+        width: 55, 
+        height: 55,
+		borderRadius: 55/2,
+		backgroundColor: '#E4ECF1',
+		borderColor: '#1F2532',
+		borderWidth: 2,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+		marginTop: 20
     },
     imageStyle: {
-        width: 50,
-        height: 50,
+        width: 30,
+        height: 30,
     }
 
 })

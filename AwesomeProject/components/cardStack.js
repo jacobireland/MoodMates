@@ -8,6 +8,7 @@ import anxiety4 from '../assets/Anxiety5.png';
 import anxiety5 from '../assets/Anxiety6.png';
 import MoodIcon from './moodIcon.js';
 import ProposalPopup from './proposalPopup.js';
+import CustomText from './customText.js';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 console.log('SCREEN_WIDTH:', SCREEN_WIDTH);
@@ -139,8 +140,6 @@ const CardStack = () => {
       height: 204,
       borderRadius: 15,
       alignSelf: 'center',
-      borderWidth: 1,
-      borderColor: 'black',
     };
 
     const currentCard = cards[index];
@@ -148,12 +147,12 @@ const CardStack = () => {
   return index === currentIndex
     ? {
         ...baseStyle,
-        backgroundColor: currentCard.text === 'Propose Activity' ? '#C0EDDA' : 'white',
+        backgroundColor: currentCard.text === 'Propose Activity' ? '#A6CFD5' : 'white',
         marginTop: 1,
       }
     : {
         ...baseStyle,
-        backgroundColor: currentCard.text === 'Propose Activity' ? '#C0EDDA' : 'white',
+        backgroundColor: currentCard.text === 'Propose Activity' ? '#A6CFD5' : 'white',
       };
     };
 
@@ -171,40 +170,40 @@ const CardStack = () => {
           >
           {card.text === 'Propose Activity' && (
             <View>
-              <Text style={groupStyles.proposeActivityText}>
+              <CustomText style={groupStyles.proposeActivityText}>
                 Propose{'\n'}Activity
-              </Text>
+              </CustomText>
               <Image source={addIcon} style={groupStyles.addIcon} />
             </View>
           )}
           {card.text == 'Movie Night' && (
             <View style={groupStyles.movieNightCard}>
-            <Text style={groupStyles.movieNightTitle}>Movie Night</Text>
-            <Text style={groupStyles.proposedByText}>Proposed by</Text>
+            <CustomText style={groupStyles.movieNightTitle}>Movie Night</CustomText>
+            <CustomText style={groupStyles.proposedByText}>Proposed by</CustomText>
             <View style={groupStyles.proposerInfo}>
               {oliviaMoodIcon}
             </View>
-              <Text style={groupStyles.proposerName}>Olivia</Text>
+              <CustomText style={groupStyles.proposerName}>Olivia</CustomText>
             <View style={groupStyles.dateTimeLocation}>
-              <Text style={groupStyles.dateTimeLocationText}>Today</Text>
-              <Text style={groupStyles.dateTimeLocationText}>10:00 PM</Text>
-              <Text style={groupStyles.dateTimeLocationText}>Hogan Suite 2A</Text>
+              <CustomText style={groupStyles.dateTimeLocationText}>Today</CustomText>
+              <CustomText style={groupStyles.dateTimeLocationText}>10:00 PM</CustomText>
+              <CustomText style={groupStyles.dateTimeLocationText}>Hogan Suite 2A</CustomText>
             </View>
             <Image source={switchIcon} style={groupStyles.switchIcon} />
           </View>
           )}
           {card.text == 'Boardgames' && (
             <View style={groupStyles.movieNightCard}>
-            <Text style={groupStyles.movieNightTitle}>Party in EC</Text>
-            <Text style={groupStyles.proposedByText}>Proposed by</Text>
+            <CustomText style={groupStyles.movieNightTitle}>Party in EC</CustomText>
+            <CustomText style={groupStyles.proposedByText}>Proposed by</CustomText>
             <View style={groupStyles.proposerInfo}>
               {myMoodIcon}
             </View>
-              <Text style={groupStyles.proposerName}>Anish</Text>
+              <CustomText style={groupStyles.proposerName}>Anish</CustomText>
             <View style={groupStyles.dateTimeLocation}>
-              <Text style={groupStyles.dateTimeLocationText}>Tomorrow</Text>
-              <Text style={groupStyles.dateTimeLocationText}>10:30 PM</Text>
-              <Text style={groupStyles.dateTimeLocationText}>EC suite 16D</Text>
+              <CustomText style={groupStyles.dateTimeLocationText}>Tomorrow</CustomText>
+              <CustomText style={groupStyles.dateTimeLocationText}>10:30 PM</CustomText>
+              <CustomText style={groupStyles.dateTimeLocationText}>EC suite 16D</CustomText>
             </View>
             <Image source={switchIcon} style={groupStyles.switchIcon} />
             </View>

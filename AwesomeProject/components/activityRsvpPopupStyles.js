@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
 	header: {
 		marginTop: 25,
 		fontSize: 30,
+		color: '#1F2532'
 	},
 
 	closeContainer: {
@@ -57,7 +58,8 @@ const styles = StyleSheet.create({
 	},
 
 	text: {
-		fontSize: 18
+		fontSize: 18,
+		color: '#1F2532'
 	},
 
 	firstRowContainer: {
@@ -78,12 +80,14 @@ const styles = StyleSheet.create({
 
 	textTime: {
 		fontSize: 18,
-		marginRight: 18
+		marginRight: 18,
+		color: '#1F2532'
 	},
 
 	textDate: {
 		fontSize: 18,
-		marginRight: 20
+		marginRight: 20,
+		color: '#1F2532'
 	},
 
 	proposedByContainer: {
@@ -104,7 +108,8 @@ const styles = StyleSheet.create({
 
 	textLocation: {
 		marginRight: 20,
-		fontSize: 18
+		fontSize: 18,
+		color: '#1F2532'
 	},
 
 	attendeesContainer: {
@@ -147,12 +152,14 @@ const styles = StyleSheet.create({
 	},
 
 	textNG: {
-		marginRight: 10
+		marginRight: 10,
+		color: '#1F2532'
 	},
 
 	textG: {
 		marginLeft: 10,
-		marginRight: 23
+		marginRight: 23,
+		color: '#1F2532'
 
 	}
 

@@ -5,6 +5,7 @@ import Mood from './mood';
 import NavBar from './navBar';
 import Greeting from './greeting';
 import DiaryEntry from './diaryEntry';
+import CustomText from './customText';
 
 const MoodPage = ({screenChoose}) => {
 
@@ -35,10 +36,10 @@ const MoodPage = ({screenChoose}) => {
 			<View style={styles.diaryBox}>
 				<TouchableOpacity style={styles.diaryOpen}
 				onPress={() => setModalVisible(true)}>
-					<Text
+					<CustomText
 						style={styles.diaryText}
 					>{enteredText}
-					</Text>
+					</CustomText>
 				</TouchableOpacity>
 				<DiaryEntry
 					visible={modalVisible}

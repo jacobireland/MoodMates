@@ -16,7 +16,6 @@ const groupStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: 12,
         marginTop: 0, 
     },
 
@@ -29,17 +28,25 @@ const groupStyles = StyleSheet.create({
     icon: {
         width: 24,
         height: 24,
+		tintColor: '#E4ECF1'
     },
+
+	settingIcon: {
+		width: 24,
+        height: 24,
+		tintColor: '#E4ECF1',
+		marginRight: 100
+
+	},
 
     rectangle: {
         width: 225,
         height: 93,
         marginTop: 25,
         borderRadius: 15,
-        backgroundColor: 'darkgray', // Set your desired background color
         alignSelf: 'center',
         borderWidth: 1,
-        borderColor: 'black',
+        borderColor: 'white',
     },
 
     groupMoodText: {
@@ -59,7 +66,7 @@ const groupStyles = StyleSheet.create({
     card: {
         width: 138,
         height: 204,
-        backgroundColor: '#C0EDDA',
+        backgroundColor: '#A6CFD5',
         borderRadius: 15,
         marginTop: 188,
         alignSelf: 'center', 
@@ -72,6 +79,7 @@ const groupStyles = StyleSheet.create({
         textAlign: 'center', 
         marginTop: 30, 
         lineHeight: 24,
+		color: '#1F2532'
     },
 
     addIcon: {
@@ -79,6 +87,7 @@ const groupStyles = StyleSheet.create({
         height: 30,
         alignSelf: 'center',
         marginTop: 42, 
+		tintColor: '#1F2532'
       },
     
 
@@ -90,13 +99,13 @@ const groupStyles = StyleSheet.create({
     oliviaMoodIconText: {
         fontSize: 18,
         textAlign: 'center',
-        top: -240,
+        top: -230,
     },
 
     oliviaMoodIconContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        top: -270, 
+        top: -260, 
         height: 0,
     },
 
@@ -199,16 +208,19 @@ const groupStyles = StyleSheet.create({
       movieNightTitle: {
         fontSize: 16,
         textAlign: 'center',
+		color: '#1F2532',
       },
       proposedByText: {
         fontSize: 14,
         marginTop: 8,
         textAlign: 'center',
+		color: '#1F2532',
       },
       proposerInfo: {
         flexDirection: 'row',
         alignItems: 'center',
         marginTop: 8,
+		color: '#1F2532',
       },
       proposerIcon: {
         width: 20,
@@ -219,13 +231,16 @@ const groupStyles = StyleSheet.create({
         top:-3,
         fontSize: 12,
         alignSelf: 'center',
+		color: '#1F2532',
       },
       dateTimeLocation: {
         marginTop: 2,
+		color: '#1F2532',
       },
       dateTimeLocationText: {
         fontSize: 13,
         top: 2,
+		color: '#1F2532',
       },
       switchIcon: {
         width: 40,

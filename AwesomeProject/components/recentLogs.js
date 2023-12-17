@@ -1,22 +1,9 @@
 import React, {useState} from 'react';
 import { Text, View, FlatList, TouchableOpacity, Image, SectionList } from 'react-native';
 import styles from './profilePageStyles';
-import { BlurView } from 'expo-blur';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import closeIcon from '../assets/closeIcon.png';
-import MoodIcon from './moodIcon';
-import anxiety0 from '../assets/Anxiety1.png';
-import anxiety1 from '../assets/Anxiety2.png';
-import anxiety2 from '../assets/Anxiety3.png';
-import anxiety3 from '../assets/Anxiety4.png';
-import anxiety4 from '../assets/Anxiety5.png';
-import anxiety5 from '../assets/Anxiety6.png';
-import anxiety6 from '../assets/Anxiety7.png';
-import anxiety7 from '../assets/Anxiety8.png';
-import anxiety8 from '../assets/Anxiety9.png';
-import settingsIcon from '../assets/settingsIcon.png';
 import backArrow from '../assets/backArrow.png';
 import Backendless from 'backendless';
+import CustomText from './customText';
 
 Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
@@ -97,15 +84,15 @@ const RecentLogs = ({screenPicker}) => {
 	
 	const renderItem = ({ item }) => (
 		<View>
-			<Text style={styles.dateTimeText} >{`${item.time}`}</Text>
+			<CustomText style={styles.dateTimeText} >{`${item.time}`}</CustomText>
 			<View style={styles.entryContainer}>
-				<Text>{item.entry}</Text>
+				<CustomText style={{ color: '#1F2532'}}>{item.entry}</CustomText>
 			</View>
 		</View>
 	);
 	
 	const renderSectionHeader = ({ section }) => (
-		<Text style={styles.sectionTitle}>{section.title}</Text>
+		<CustomText style={styles.sectionTitle}>{section.title}</CustomText>
 	);
 
 
@@ -118,7 +105,7 @@ const RecentLogs = ({screenPicker}) => {
 					style={styles.backArrow}
 					source={backArrow}/>
 				</TouchableOpacity>
-				<Text style={styles.recentLogs}>Recent Logs</Text>
+				<CustomText style={styles.recentLogs}>Recent Logs</CustomText>
 			</View>
 
 			<SectionList

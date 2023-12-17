@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
 	profileIcon: {
 		width: 41,
 		height: 41,
+		tintColor: '#E4ECF1'
 	},
 
 	greetingName: {
@@ -165,7 +166,7 @@ const styles = StyleSheet.create({
 	},
 
 	navButtonContainer: {
-		backgroundColor: '#a7cced',
+		backgroundColor: '#A6CFD5',
 		width: 138,
 		height: '100%',
 		justifyContent: 'center',

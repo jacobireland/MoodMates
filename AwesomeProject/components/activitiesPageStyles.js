@@ -16,18 +16,18 @@ const Styles = () => {
 
 		actHeading: {
 			fontSize: 35,
-			marginRight: 180,
+			marginRight: 170,
 		},
 
 		plus: {
 			width: 32,
 			height: 32,
+			tintColor: '#E4ECF1'
 		},
 
 		propsContainer: {
 			flexDirection: 'column',
 			marginBottom: 25
-		
 		},
 
 		propTitle: {
@@ -36,6 +36,18 @@ const Styles = () => {
 			height: 30,
 			marginBottom: 15,
 			fontWeight: '500',
+		},
+
+		actTitle: {
+			color: '#1F2532',
+		},
+
+		actDate: {
+			color: '#1F2532'
+		},
+
+		actName: {
+			color: '#1F2532'
 		},
 
 		gName: {
@@ -62,8 +74,6 @@ const Styles = () => {
 			height: 59,
 			borderRadius: 8,
 			backgroundColor: '#FFFFFF',
-			borderColor: '#000000',
-			borderWidth: 1,
 		},
 
 		activity: {
@@ -75,7 +85,8 @@ const Styles = () => {
 		
 		infoIcon: {
 			width: 12,
-			height: 12
+			height: 12,
+			tintColor: '#1F2532'
 		},
 
 		activityInfo: {

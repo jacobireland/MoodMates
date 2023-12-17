@@ -15,6 +15,7 @@ import anxiety6 from '../assets/Anxiety7.png';
 import anxiety7 from '../assets/Anxiety8.png';
 import anxiety8 from '../assets/Anxiety9.png';
 import RSVPSwitch from '../assets/RSVPSwitch.png';
+import CustomText from './customText';
 
 const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 
@@ -43,7 +44,7 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 				<View style={styles.proPopupContainer}>
 					<View style={styles.popupContent}>
 						<View style={styles.headerContainer}>
-							<Text style={styles.header}>Movie Night</Text>
+							<CustomText style={styles.header}>Movie Night</CustomText>
 							<TouchableOpacity onPress={onClose}
 							style={styles.closeContainer}>
 								<Image
@@ -56,49 +57,49 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 							<View style={styles.firstRowContainer}>
 								<View style={styles.timeDateContainer}>
 									<View style={styles.timeDateBox}>
-										<Text style={styles.textTime}>Time:</Text>
-										<Text style={styles.text}>10:00pm</Text>
+										<CustomText style={styles.textTime}>Time:</CustomText>
+										<CustomText style={styles.text}>10:00pm</CustomText>
 									</View>
 									<View style={styles.timeDateBox}>
-										<Text style={styles.textDate}>Date:</Text>
-										<Text style={styles.text}>Today</Text>
+										<CustomText style={styles.textDate}>Date:</CustomText>
+										<CustomText style={styles.text}>Today</CustomText>
 									</View>
 								</View>
 								<View style={styles.proposedByContainer}>
-									<Text style={styles.text}>Proposed By:</Text>
+									<CustomText style={styles.text}>Proposed By:</CustomText>
 									<View style={styles.moodContainer}>
 										<MoodIcon size={65} happiness='#FF8B94' energy={0.8} anxiety={anxiety8}/>
 									</View>
-									<Text style={styles.text}>Olivia</Text>
+									<CustomText style={styles.text}>Olivia</CustomText>
 								</View>
 							</View>
 							<View style={styles.locationContainer}>
-								<Text style={styles.textLocation}>Location:</Text>
-								<Text style={styles.text}>Hogan 2A</Text>
+								<CustomText style={styles.textLocation}>Location:</CustomText>
+								<CustomText style={styles.text}>Hogan 2A</CustomText>
 							</View>
 							<View style={styles.attendeesContainer}>
-								<Text style={styles.text}>Whose Going:</Text>
+								<CustomText style={styles.text}>Whose Going:</CustomText>
 								<ScrollView horizontal style={styles.attendeesBox}>
 									<View style={styles.attendees}>
 										<MoodIcon size={65} happiness='#FFEBB5' energy={0.8} anxiety={anxiety5}/>
-										<Text style={styles.text}>Justin</Text>
+										<CustomText style={styles.text}>Justin</CustomText>
 									</View>
 									<View style={styles.attendees}>
 										<MoodIcon size={65} happiness='#97E384' energy={1} anxiety={anxiety2}/>
-										<Text style={styles.text}>Anish</Text>
+										<CustomText style={styles.text}>Anish</CustomText>
 									</View>
 									<View style={styles.attendees}>
 										<MoodIcon size={65} happiness='#FFAAA5' energy={0.65} anxiety={anxiety6}/>
-										<Text style={styles.text}>Ben</Text>
+										<CustomText style={styles.text}>Ben</CustomText>
 									</View>
 									<View style={styles.attendees}>
 										<MoodIcon size={65} happiness='#CFEDC0' energy={1} anxiety={anxiety8}/>
-										<Text style={styles.text}>Andrea</Text>
+										<CustomText style={styles.text}>Andrea</CustomText>
 									</View>
 								</ScrollView>
 							</View>
 							<View style={styles.switchContainer}>
-								<Text style={styles.textNG}>Not Going</Text>
+								<CustomText style={styles.textNG}>Not Going</CustomText>
 								{switchEnabled ? (
 									<Switch
 										value={toggleEnabled}
@@ -113,7 +114,7 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 										<Image style={styles.switchIcon} source={RSVPSwitch} />
 									</TouchableOpacity>
 								)}
-								<Text style={styles.textG}>Going</Text>
+								<CustomText style={styles.textG}>Going</CustomText>
 							</View>
 						</View>
 					</View>

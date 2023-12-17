@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
 	backArrow: {
 		width: 25,
 		height: 25,
+		tintColor: '#E4ECF1'
 	},
 
 	name: {
@@ -28,6 +29,7 @@ const styles = StyleSheet.create({
 	settingsIcon: {
 		width: 32,
 		height: 32,
+		tintColor: '#E4ECF1'
 	},
 	
 	moodContainer: {
@@ -42,8 +44,8 @@ const styles = StyleSheet.create({
 	},
 
 	friendsButton: {
-		backgroundColor: '#8BC7AF',
-		width: 120,
+		backgroundColor: '#A6CFD5',
+		width: 135,
 		height: 35,
 		borderRadius: 8,
 		justifyContent: 'center',
@@ -66,6 +68,7 @@ const styles = StyleSheet.create({
 
 	friendsText: {
 		fontSize: 18,
+		color: '#1F2532'
 	},
 
 	groupsStat: {
@@ -98,7 +101,7 @@ const styles = StyleSheet.create({
 
 	weekContainer: {
 		flex: 1,
-		marginLeft: 152,
+		marginLeft: 153,
 		height: 89,
 		justifyContent: 'center',
 	},
@@ -112,7 +115,7 @@ const styles = StyleSheet.create({
 
 	yearContainer: {
 		flex: 1,
-		marginLeft: 160,
+		marginLeft: 166,
 		height: 89,
 		justifyContent: 'center',
 	},
@@ -133,7 +136,8 @@ const styles = StyleSheet.create({
 
 	logsText: {
 		fontSize: 16,
-		fontWeight: '600'
+		fontWeight: '600',
+		fontFamily: ''
 	},
 
 
@@ -162,7 +166,7 @@ const styles = StyleSheet.create({
 
 	entryContainer: {
 		flex: 1,
-		backgroundColor: 'lightgray',
+		backgroundColor: 'white',
 		marginBottom: 5,
 		borderRadius: 5,
 		padding: 4,
@@ -178,7 +182,6 @@ const styles = StyleSheet.create({
 		paddingBottom: 20,
 		fontSize: 18,
 		fontWeight: '600',
-		backgroundColor: 'darkgray',
 		borderRadius: 5,
 		width: '100%',
 		height: 30,

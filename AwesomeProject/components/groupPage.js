@@ -223,7 +223,7 @@ return (
                 	<Image source={backArrowIcon} style={groupStyles.icon } />
 				</TouchableOpacity>
                 <CustomText style={groupStyles.headerText }>Movie Squad</CustomText>
-                <Image source={settingsIcon} style={groupStyles.icon } />
+                <Image source={settingsIcon} style={groupStyles.Icon } />
         </View>
 
         <View style={groupStyles.rectangle}>

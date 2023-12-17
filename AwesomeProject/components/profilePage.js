@@ -106,9 +106,9 @@ const ProfilePage = ({screenChoose}) => {
 					<CustomText style={styles.moodText}>Your Current Mood</CustomText>
 				</View>
 
-				<View style={styles.friendsButton}>
+				<TouchableOpacity style={styles.friendsButton}>
 					<CustomText style={styles.friendsText}>Find Friends</CustomText>
-				</View>
+				</TouchableOpacity>
 
 				<View style={styles.statsContainer}>
 					<View style={styles.friendsStat}>
