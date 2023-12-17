@@ -22,7 +22,7 @@ const CustomTextInput = (props) => {
 		return <TextInput>Loading...</TextInput>;
 	}
 
-	return <TextInput style={[{fontFamily: 'custom-font', color: '#E4ECF1', }, props.style]}>{props.children}</TextInput>;
+	return <TextInput style={[{fontFamily: 'custom-font', color: '#1F2532', }, props.style]}>{props.children}</TextInput>;
 };
 
 export default CustomTextInput;

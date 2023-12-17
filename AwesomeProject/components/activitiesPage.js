@@ -151,6 +151,12 @@ const ActivitiesPage = () => {
 				visible={modalRsvpVisible}
 				onClose={() => setModalRsvpVisible(false)}
 				rsvpData={rsvpData}
+				activity = 'Movie Night'
+				time = '10:00pm'
+				date = 'Today'
+				location = 'Hogan 2A'
+				proposer = 'Olivia'
+
 			/>
             
             {/* My Proposals Section */}

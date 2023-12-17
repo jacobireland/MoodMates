@@ -9,6 +9,7 @@ import anxiety5 from '../assets/Anxiety6.png';
 import MoodIcon from './moodIcon.js';
 import ProposalPopup from './proposalPopup.js';
 import CustomText from './customText.js';
+import ActivityRsvpPopup from './activityRsvpPopup.js'
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 console.log('SCREEN_WIDTH:', SCREEN_WIDTH);
@@ -16,6 +17,16 @@ console.log('SCREEN_WIDTH:', SCREEN_WIDTH);
 const CardStack = () => {
 
 	const [modalVisible, setModalVisible] = React.useState(false);
+
+	const [modalRsvpMovieVisible, setModalRsvpMovieVisible] = React.useState(false);
+
+	const [modalRsvpPartyVisible, setModalRsvpPartyVisible] = React.useState(false);
+
+	const rsvpData = (val) => {
+	}
+
+	const proposedActivity = () => {
+	}
 
     const oliviaMoodIcon = (
         <View style={groupStyles.cardMoodIcon}>
@@ -42,7 +53,7 @@ const CardStack = () => {
 
   const [cards, setCards] = useState([
     { text: 'Movie Night', translateX: new Animated.Value(0), zIndex: 2 },
-    { text: 'Boardgames', translateX: new Animated.Value(0), zIndex: 1 },
+    { text: 'Party in EC', translateX: new Animated.Value(0), zIndex: 1 },
     { text: 'Propose Activity', translateX: new Animated.Value(0), zIndex: 0 },
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -114,7 +125,28 @@ const CardStack = () => {
 
 		else if (Math.abs(dx) == 0 && Math.abs(vx) == 0) {
 			console.log("registered click")
-			setModalVisible(true)
+			
+			// Find the card with the highest zIndex
+			const topCard = cards.reduce((prevCard, currentCard) =>
+				prevCard.zIndex > currentCard.zIndex ? prevCard : currentCard
+			);
+
+			console.log('Card on top:', topCard);
+
+			if (topCard.text == 'Movie Night'){
+				setModalRsvpMovieVisible(true)
+				console.log('Movie Night RSVP')
+			}
+
+			else if (topCard.text == 'Party in EC') {
+				setModalRsvpPartyVisible(true)
+				console.log('Party EC RSVP')
+			}
+
+			else {
+				setModalVisible(true)
+				console.log("Proposal Popup")
+			}
 		}
 		
 		else {
@@ -192,7 +224,7 @@ const CardStack = () => {
             <Image source={switchIcon} style={groupStyles.switchIcon} />
           </View>
           )}
-          {card.text == 'Boardgames' && (
+          {card.text == 'Party in EC' && (
             <View style={groupStyles.movieNightCard}>
             <CustomText style={groupStyles.movieNightTitle}>Party in EC</CustomText>
             <CustomText style={groupStyles.proposedByText}>Proposed by</CustomText>
@@ -211,9 +243,29 @@ const CardStack = () => {
         </Animated.View>
       ))}
 	  <ProposalPopup
-				visible={modalVisible}
-				onClose={() => setModalVisible(false)}
-				proposedActivity={console.log("hey")}
+			visible={modalVisible}
+			onClose={() => setModalVisible(false)}
+			proposedActivity={() => {console.log("hey")}}
+	  />
+	  <ActivityRsvpPopup
+			visible={modalRsvpMovieVisible}
+			onClose={() => setModalRsvpMovieVisible(false)}
+			rsvpData={rsvpData}
+			activity = 'Movie Night'
+			time = '10:00pm'
+			date = 'Today'
+			location = 'Hogan 2A'
+			proposer = 'Olivia'
+	  />
+	  <ActivityRsvpPopup
+			visible={modalRsvpPartyVisible}
+			onClose={() => setModalRsvpPartyVisible(false)}
+			rsvpData={rsvpData}
+			activity = 'Party in EC'
+			time = '10:30pm'
+			date = 'Tomorrow'
+			location = 'EC Suite 16B'
+			proposer = 'Anish'
 	  />
     </View>
   );

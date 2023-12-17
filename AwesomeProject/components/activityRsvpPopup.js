@@ -17,7 +17,7 @@ import anxiety8 from '../assets/Anxiety9.png';
 import RSVPSwitch from '../assets/RSVPSwitch.png';
 import CustomText from './customText';
 
-const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
+const ActivityRsvpPopup = ({ visible, onClose, rsvpData, activity, time, date, location, proposer }) => {
 
 	const [switchEnabled, setSwitchEnabled] = useState(false)	;
 
@@ -44,7 +44,7 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 				<View style={styles.proPopupContainer}>
 					<View style={styles.popupContent}>
 						<View style={styles.headerContainer}>
-							<CustomText style={styles.header}>Movie Night</CustomText>
+							<CustomText style={styles.header}>{activity}</CustomText>
 							<TouchableOpacity onPress={onClose}
 							style={styles.closeContainer}>
 								<Image
@@ -58,11 +58,11 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 								<View style={styles.timeDateContainer}>
 									<View style={styles.timeDateBox}>
 										<CustomText style={styles.textTime}>Time:</CustomText>
-										<CustomText style={styles.text}>10:00pm</CustomText>
+										<CustomText style={styles.text}>{time}</CustomText>
 									</View>
 									<View style={styles.timeDateBox}>
 										<CustomText style={styles.textDate}>Date:</CustomText>
-										<CustomText style={styles.text}>Today</CustomText>
+										<CustomText style={styles.text}>{date}</CustomText>
 									</View>
 								</View>
 								<View style={styles.proposedByContainer}>
@@ -70,12 +70,12 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 									<View style={styles.moodContainer}>
 										<MoodIcon size={65} happiness='#FF8B94' energy={0.8} anxiety={anxiety8}/>
 									</View>
-									<CustomText style={styles.text}>Olivia</CustomText>
+									<CustomText style={styles.text}>{proposer}</CustomText>
 								</View>
 							</View>
 							<View style={styles.locationContainer}>
 								<CustomText style={styles.textLocation}>Location:</CustomText>
-								<CustomText style={styles.text}>Hogan 2A</CustomText>
+								<CustomText style={styles.text}>{location}</CustomText>
 							</View>
 							<View style={styles.attendeesContainer}>
 								<CustomText style={styles.text}>Whose Going:</CustomText>
