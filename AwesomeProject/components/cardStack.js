@@ -195,16 +195,16 @@ const CardStack = () => {
           )}
           {card.text == 'Boardgames' && (
             <View style={groupStyles.movieNightCard}>
-            <Text style={groupStyles.movieNightTitle}>Boardgames</Text>
+            <Text style={groupStyles.movieNightTitle}>Party in EC</Text>
             <Text style={groupStyles.proposedByText}>Proposed by</Text>
             <View style={groupStyles.proposerInfo}>
               {myMoodIcon}
             </View>
-              <Text style={groupStyles.proposerName}>Me</Text>
+              <Text style={groupStyles.proposerName}>Anish</Text>
             <View style={groupStyles.dateTimeLocation}>
               <Text style={groupStyles.dateTimeLocationText}>Tomorrow</Text>
-              <Text style={groupStyles.dateTimeLocationText}>9:00 PM</Text>
-              <Text style={groupStyles.dateTimeLocationText}>Ruggles Suite 6B</Text>
+              <Text style={groupStyles.dateTimeLocationText}>10:30 PM</Text>
+              <Text style={groupStyles.dateTimeLocationText}>EC suite 16D</Text>
             </View>
             <Image source={switchIcon} style={groupStyles.switchIcon} />
             </View>

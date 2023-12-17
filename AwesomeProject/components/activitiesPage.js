@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, Image, TextInput, Switch } from 'react-native';
-import styles from './activitiesPageStyles';
+import Styles from './activitiesPageStyles';
 import infoIcon from '../assets/infoIcon.png';
 import backArrow from '../assets/backArrow.png';
 import { useState } from "react";
@@ -9,11 +9,16 @@ import ProposalPopup from './proposalPopup';
 import Backendless from 'backendless';
 import ActivityRsvpPopup from './activityRsvpPopup';
 import RSVPSwitch from '../assets/RSVPSwitch.png';
+import { useTheme } from './themeContext';
 
 Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 
 
 const ActivitiesPage = () => {
+
+	const styles = Styles();
+
+	const { theme } = useTheme();
 
 	const [switchMovieEnabled, setSwitchMovieEnabled] = useState(false)	;
 
@@ -63,7 +68,7 @@ const ActivitiesPage = () => {
 
 	const [modalRsvpVisible, setModalRsvpVisible] = React.useState(false);
 
-	const [myProposals, setMyProposals] = React.useState([<Text key={'noproposals'} style={styles.noActivity}>No Proposals!</Text>])
+	const [myProposals, setMyProposals] = React.useState([<Text key={'noproposals'} style={[styles.noActivity, { color: theme.textColor }]}>No Proposals!</Text>])
 
 	const showProposals = () => {
 		return myProposals
@@ -83,7 +88,7 @@ const ActivitiesPage = () => {
 						<View key={date} style={styles.activitiesContainer}>
 							<TouchableOpacity style={styles.activityContainer}>
 								<View style={styles.activity}>
-									<Text style={styles.actTitle}>{activity}</Text>
+									<Text style={[styles.actTitle, { color: theme.textColor }]}>{activity}</Text>
 									<Image
 									style={styles.infoIcon}
 									source={infoIcon}
@@ -128,11 +133,11 @@ const ActivitiesPage = () => {
             {/* Activity Page Heading */}
             <View style={styles.headingContainer}>
 			
-                <Text style={styles.actHeading}>Activities</Text>
+                <Text style={[styles.actHeading, { color: theme.textColor }]}>Activities</Text>
                 
 				<TouchableOpacity onPress={() => setModalVisible(true)}>
 					<Image
-					style={styles.plus}
+					style={[styles.plus, { tintColor: theme.textColor }]}
 					source={plus}
 					/>
 				</TouchableOpacity>
@@ -169,7 +174,7 @@ const ActivitiesPage = () => {
                 <View style={styles.propActivities}>
                     {/* Group 1 Activities*/}
                     <View style={styles.gActivities}>
-						<Text style={styles.gNameMovie}>Movie Squad</Text>
+						<Text style={[styles.gNameMovie, { color: theme.textColor }]}>Movie Squad</Text>
                         {/* Group 1 Activity 1*/}
 						<View style={styles.activitiesContainer}>
 							<TouchableOpacity style={styles.activityContainer} onPress={() => setModalRsvpVisible(true)}>
@@ -219,7 +224,7 @@ const ActivitiesPage = () => {
 
 								<View style={styles.activityInfo}>
 									<Text style={styles.actDate}>Tmrw, 10:30pm</Text>
-									<Text style={styles.actName}>Andrea</Text>
+									<Text style={styles.actName}>Anish</Text>
 								</View>
 							</TouchableOpacity>
 							<View style={styles.switchContainer}>
@@ -242,14 +247,14 @@ const ActivitiesPage = () => {
                         
                     </View>
 
-                    <Text style={styles.gName}>Track Team</Text>
+                    <Text style={[styles.gName, { color: theme.textColor }]}>Track Team</Text>
                     <View style={styles.gActivities}>
-                        <Text style={styles.noActivity}>No Proposals!</Text>
+                        <Text style={[styles.noActivity, { color: theme.textColor }]}>No Proposals!</Text>
                     </View>
 
-                    <Text style={styles.gName}>The Boys</Text>
+                    <Text style={[styles.gName, { color: theme.textColor }]}>The Boys</Text>
                     <View style={styles.gActivities}>
-                        <Text style={styles.noActivity}>No Proposals!</Text>
+                        <Text style={[styles.noActivity, { color: theme.textColor }]}>No Proposals!</Text>
                     </View>
                 </View>
                 

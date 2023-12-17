@@ -8,13 +8,13 @@ import GroupPage from './components/groupPage';
 import groupStyles from './components/groupPageStyle'; 
 
 import MoodPage from './components/moodPage';
-import FlaskTester from './components/flaskTester';
 import ActivityRsvpPopupMain from './components/activityRsvpPopupMain';
 import ProposalPopupMain from './components/proposalPopupMain';
 import RecentLogs from './components/recentLogs';
 import ProfilePage from './components/profilePage';
 import MyGroups from './components/myGroups';
 import ActivitiesPage from './components/activitiesPage';
+import { ThemeProvider } from './components/themeContext';
 
 /** This is the backbone code for our app.
 	The NavBar will be on every page.
@@ -64,21 +64,23 @@ const App = () => {
 
 	return (
 	
-		<View style={styles.container}>
-			<View style={styles.appContent}>
+		<ThemeProvider>
+			<View style={styles.container}>
+				<View style={styles.appContent}>
 
-				{/* replace this with your page export
-				i.e.: <your_page_export_name/> to be able to see your
-				code in the Expo Go app */}
+					{/* replace this with your page export
+					i.e.: <your_page_export_name/> to be able to see your
+					code in the Expo Go app */}
 
-				{screenRender()}
+					{screenRender()}
+				</View>
+			
+				{/* Component for our nav bar,
+				defined in /components/navBar.js */}
+				<NavBar screenChoose={screenChoose}/>
+			
 			</View>
-		
-			{/* Component for our nav bar,
-			defined in /components/navBar.js */}
-			<NavBar screenChoose={screenChoose}/>
-		
-		</View>
+		</ThemeProvider>
 		
 )}
 

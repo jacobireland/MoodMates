@@ -1,116 +1,122 @@
 import {StyleSheet} from 'react-native'
+import { useTheme } from './themeContext';
 
-const styles = StyleSheet.create({
+const Styles = () => {
 
-    mainContainer: {
-        flex: 1
-    },
+	const { theme } = useTheme();
+	
+	return StyleSheet.create({
 
-    headingContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 30
-    },
+		mainContainer: {
+			flex: 1
+		},
 
-    actHeading: {
-        fontSize: 35,
-		marginRight: 180,
-    },
+		headingContainer: {
+			flexDirection: 'row',
+			alignItems: 'center',
+			marginBottom: 30
+		},
 
-    plus: {
-        width: 32,
-        height: 32,
-    },
+		actHeading: {
+			fontSize: 35,
+			marginRight: 180,
+		},
 
-    propsContainer: {
-        flexDirection: 'column',
-		marginBottom: 25
-    
-    },
+		plus: {
+			width: 32,
+			height: 32,
+		},
 
-    propTitle: {
-        fontSize: 24,
-        width: 230,
-        height: 30,
-        marginBottom: 15,
-		fontWeight: '500'
-    },
+		propsContainer: {
+			flexDirection: 'column',
+			marginBottom: 25
+		
+		},
 
-    gName: {
-        fontSize: 18,
-        marginBottom: 10,
-		marginTop: 20,
-    },
+		propTitle: {
+			fontSize: 24,
+			width: 230,
+			height: 30,
+			marginBottom: 15,
+			fontWeight: '500',
+			color: theme.textColor,
+		},
 
-	gNameMovie: {
-        fontSize: 18,
-        marginBottom: 10,
-    },
+		gName: {
+			fontSize: 18,
+			marginBottom: 10,
+			marginTop: 20,
+		},
 
-	activitiesContainer: {
-		width: '100%',
-		height: 59,
-		marginBottom: 10,
-		flexDirection: 'row',
-		alignItems: 'center',
-	},
+		gNameMovie: {
+			fontSize: 18,
+			marginBottom: 10,
+		},
 
-    activityContainer: {
-        width: 227,
-        height: 59,
-        borderRadius: 8,
-        backgroundColor: '#FFFFFF',
-        borderColor: '#000000',
-        borderWidth: 1,
-    },
+		activitiesContainer: {
+			width: '100%',
+			height: 59,
+			marginBottom: 10,
+			flexDirection: 'row',
+			alignItems: 'center',
+		},
 
-    activity: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        margin: 5,
-        marginBottom: 10
-    },
-    
-    infoIcon: {
-        width: 12,
-        height: 12
-    },
+		activityContainer: {
+			width: 227,
+			height: 59,
+			borderRadius: 8,
+			backgroundColor: '#FFFFFF',
+			borderColor: '#000000',
+			borderWidth: 1,
+		},
 
-    activityInfo: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        margin: 5
-    },
+		activity: {
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+			margin: 5,
+			marginBottom: 10
+		},
+		
+		infoIcon: {
+			width: 12,
+			height: 12
+		},
 
-    noActivity: {
-        fontStyle: 'italic',
-        marginBottom: 10
-    },
+		activityInfo: {
+			flexDirection: 'row',
+			justifyContent: 'space-between',
+			margin: 5
+		},
 
-	switchContainer: {
-		justifyContent: 'center',
-		alignItems: 'center',
-		height: 59,
-		flexDirection: 'row',
-		marginLeft: 30,
-		width: 100,
-	},
+		noActivity: {
+			fontStyle: 'italic',
+			marginBottom: 10
+		},
 
-	switchBox: {
-		width: 90,
-		height: 50,
-		justifyContent: 'center',
-		alignItems: 'center'
-	},
+		switchContainer: {
+			justifyContent: 'center',
+			alignItems: 'center',
+			height: 59,
+			flexDirection: 'row',
+			marginLeft: 30,
+			width: 100,
+		},
 
-	switchIcon: {
-		transform: [{scale: 0.25}],
-		margin: 0,
-		padding: 0,
-	},
+		switchBox: {
+			width: 90,
+			height: 50,
+			justifyContent: 'center',
+			alignItems: 'center'
+		},
 
+		switchIcon: {
+			transform: [{scale: 0.25}],
+			margin: 0,
+			padding: 0,
+		},
 
+	})
 
-})
+}
 
-export default styles;
+export default Styles;

@@ -3,8 +3,15 @@ import {StyleSheet} from 'react-native'
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'darkgray',
+		backgroundColor: '#2e3440',
 	},
+
+	/*
+1c1c21
+2e3440
+0c1821
+
+	*/
 
 	appContent: {
 		marginTop: 81,

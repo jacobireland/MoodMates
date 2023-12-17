@@ -15,10 +15,13 @@ import anxiety6 from '../assets/Anxiety7.png';
 import anxiety7 from '../assets/Anxiety8.png';
 import anxiety8 from '../assets/Anxiety9.png';
 import addIcon from '../assets/addIcon.png';
+import { useTheme } from './themeContext';
 
 
 
 const GroupPage = ({screenChoose}) => {
+
+const { theme } = useTheme();
 
 const [userAnxiety, setUserAnxiety] = React.useState(anxiety4)
 
