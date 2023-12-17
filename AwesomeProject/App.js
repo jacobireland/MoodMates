@@ -15,6 +15,7 @@ import ProfilePage from './components/profilePage';
 import MyGroups from './components/myGroups';
 import ActivitiesPage from './components/activitiesPage';
 import { ThemeProvider } from './components/themeContext';
+import { setCustomText } from 'react-native-global-props';
 
 /** This is the backbone code for our app.
 	The NavBar will be on every page.
@@ -24,6 +25,17 @@ import { ThemeProvider } from './components/themeContext';
 	appContent element (like how MoodPage is right now) and that will
 	make it visible to users */
 
+
+// Setting default styles for all Text components.
+const customTextProps = {
+	style: {
+	fontSize: 16,
+	fontFamily: Platform.OS === 'ios' ? 'HelveticaNeue' : 'Roboto',
+	color: 'black'
+	}
+};
+
+setCustomText(customTextProps);
 
 const App = () => {
 

@@ -3,13 +3,18 @@ import {StyleSheet} from 'react-native'
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#2e3440',
+		backgroundColor: '#5B6A91',
 	},
 
 	/*
 1c1c21
 2e3440
 0c1821
+59656f
+
+5B6A91
+
+435585
 
 	*/
 
@@ -101,7 +106,7 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: 160,
 		borderRadius: 4,
-		backgroundColor: 'white',
+		backgroundColor: '#E4ECF1',
 		alignItems: 'flex-start',
 		marginTop: 32
 	},
@@ -116,7 +121,8 @@ const styles = StyleSheet.create({
 		marginTop: 5,
 		marginLeft: 5,
 		marginBottom: 5,
-		marginRight: 5
+		marginRight: 5,
+		color: '#1F2532'
 	},
 
 	modalContainer: {
@@ -159,22 +165,31 @@ const styles = StyleSheet.create({
 	},
 
 	navButtonContainer: {
-		backgroundColor: '#123456',
+		backgroundColor: '#a7cced',
 		width: 138,
 		height: '100%',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#C0EDDA',
+		backgroundColor: '#A6CFD5',
 	},
+
+	/*
+A7CCED
+
+
+text: B9CDDA
+
+	*/
 
 	buttonText: {
 		fontSize: 20,
+		color: '#1F2532'
 	},
 
 	separator: {
-		height: 65,
+		height: 70,
 		width: 1,
-		backgroundColor: '#8BC7AF',
+		backgroundColor: '#a7cced',
 	},
 
 

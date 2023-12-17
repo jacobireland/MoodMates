@@ -6,7 +6,8 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState({
-    textColor: 'white',
+    textColor: '#E4ECF1',
+	fontFamily: 'Gill Sans'
   });
 
   return (

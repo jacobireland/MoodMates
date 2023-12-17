@@ -96,7 +96,7 @@ const oliviaMoodIcon = (
 
 const oliviaText = (
     <View style={groupStyles.moodIconTextContainer}>
-      <Text style={groupStyles.oliviaMoodIconText}>Olivia</Text>
+      <Text style={[groupStyles.oliviaMoodIconText, { color: theme.textColor }]}>Olivia</Text>
     </View>
 );
 
@@ -113,7 +113,7 @@ const benMoodIcon = (
 
 const benText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.benMoodIconText}>Ben</Text>
+        <Text style={[groupStyles.benMoodIconText, { color: theme.textColor }]}>Ben</Text>
     </View>
 );
 
@@ -130,7 +130,7 @@ const justinMoodIcon = (
 
 const justinText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.justinMoodIconText}>Justin</Text>
+        <Text style={[groupStyles.justinMoodIconText, { color: theme.textColor }]}>Justin</Text>
     </View>
 );
 
@@ -147,7 +147,7 @@ const jacobMoodIcon = (
 
 const jacobText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.jacobMoodIconText}>Jacob</Text>
+        <Text style={[groupStyles.jacobMoodIconText, { color: theme.textColor }]}>Jacob</Text>
     </View>
 );
 
@@ -164,7 +164,7 @@ const mayaMoodIcon = (
 
 const mayaText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.mayaMoodIconText}>Maya</Text>
+        <Text style={[groupStyles.mayaMoodIconText, { color: theme.textColor }]}>Maya</Text>
     </View>
 );
 
@@ -181,7 +181,7 @@ const anishMoodIcon = (
 
 const anishText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.anishMoodIconText}>Anish</Text>
+        <Text style={[groupStyles.anishMoodIconText, { color: theme.textColor }]}>Anish</Text>
     </View>
 );
 
@@ -198,7 +198,7 @@ const charlieMoodIcon = (
 
 const charlieText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.charlieMoodIconText}>Charlie</Text>
+        <Text style={[groupStyles.charlieMoodIconText, { color: theme.textColor }]}>Charlie</Text>
     </View>
 );
 
@@ -215,7 +215,7 @@ const myMoodIcon = (
 
 const myText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <Text style={groupStyles.myMoodIconText}>Me</Text>
+        <Text style={[groupStyles.myMoodIconText, { color: theme.textColor }]}>Me</Text>
     </View>
 );
 
@@ -224,14 +224,14 @@ return (
 
         <View style={groupStyles.headerContainer}>
 				<TouchableOpacity onPress={() => screenChoose('GroupsPage')}>
-                	<Image source={backArrowIcon} style={groupStyles.icon} />
+                	<Image source={backArrowIcon} style={[groupStyles.icon, { tintColor: theme.textColor }]} />
 				</TouchableOpacity>
-                <Text style={groupStyles.headerText}>Movie Squad</Text>
-                <Image source={settingsIcon} style={groupStyles.icon} />
+                <Text style={[groupStyles.headerText, { color: theme.textColor }]}>Movie Squad</Text>
+                <Image source={settingsIcon} style={[groupStyles.icon, { tintColor: theme.textColor }]} />
         </View>
 
         <View style={groupStyles.rectangle}>
-                <Text style={groupStyles.groupMoodText}>Group's Current Mood</Text>
+                <Text style={[groupStyles.groupMoodText, { color: theme.textColor }]}>Group's Current Mood</Text>
                 <View style={groupStyles.moodIconContainer}>
                     <MoodIcon size={65} happiness={happiness} energy={energy} anxiety={anxiety}/>
                 </View>

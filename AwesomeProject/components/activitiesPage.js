@@ -88,7 +88,7 @@ const ActivitiesPage = () => {
 						<View key={date} style={styles.activitiesContainer}>
 							<TouchableOpacity style={styles.activityContainer}>
 								<View style={styles.activity}>
-									<Text style={[styles.actTitle, { color: theme.textColor }]}>{activity}</Text>
+									<Text style={styles.actTitle}>{activity}</Text>
 									<Image
 									style={styles.infoIcon}
 									source={infoIcon}

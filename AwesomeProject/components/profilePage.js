@@ -18,6 +18,7 @@ import settingsIcon from '../assets/settingsIcon.png';
 import backArrow from '../assets/backArrow.png';
 import RecentLogs from './recentLogs';
 import Backendless from 'backendless';
+import { useTheme } from './themeContext';
 
 
 
@@ -25,6 +26,8 @@ Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-
 
 
 const ProfilePage = ({screenChoose}) => {
+
+	const { theme } = useTheme()
 
 	const [happiness, setHappiness] = React.useState('#FFD3B6')
 
@@ -38,7 +41,7 @@ const ProfilePage = ({screenChoose}) => {
 		console.error('http status: ', error.status)
 	}
 
-	anxietyPicker = (value) => {
+	const anxietyPicker = (value) => {
 		if (value == 0) {
 			setAnxiety(anxiety0)
 		}
@@ -92,51 +95,51 @@ const ProfilePage = ({screenChoose}) => {
 				<View style={styles.headingContainer}>
 					<TouchableOpacity onPress={() => {screenChoose('MoodPage')}} style={styles.arrowContainer}>
 						<Image
-						style={styles.backArrow}
+						style={[styles.backArrow, { tintColor: theme.textColor }]}
 						source={backArrow}/>
 					</TouchableOpacity>
-					<Text style={styles.name}>Andrea</Text>
+					<Text style={[styles.name, { color: theme.textColor }]}>Andrea</Text>
 					<Image
-					style={styles.settingsIcon}
+					style={[styles.settingsIcon, { tintColor: theme.textColor }]}
 					source={settingsIcon}/>
 				</View>
 
 				<View style={styles.moodContainer}>
 					<MoodIcon size={85} happiness={happiness} energy={energy} anxiety={anxiety}/>
-					<Text style={styles.moodText}>Your Current Mood</Text>
+					<Text style={[styles.moodText, { color: theme.textColor }]}>Your Current Mood</Text>
 				</View>
 
 				<View style={styles.friendsButton}>
-					<Text style={styles.friendsText}>Find Friends</Text>
+					<Text style={[styles.friendsText, { color: theme.textColor }]}>Find Friends</Text>
 				</View>
 
 				<View style={styles.statsContainer}>
 					<View style={styles.friendsStat}>
-						<Text style={styles.fStatsText}>9</Text>
-						<Text style={styles.fStatsText}>Friends</Text>
+						<Text style={[styles.fStatsText, { color: theme.textColor }]}>9</Text>
+						<Text style={[styles.fStatsText, { color: theme.textColor }]}>Friends</Text>
 					</View>
 					<View style={styles.groupsStat}>
-						<Text style={styles.fStatsText}>3</Text>
-						<Text style={styles.fStatsText}>Groups</Text>
+						<Text style={[styles.fStatsText, { color: theme.textColor }]}>3</Text>
+						<Text style={[styles.fStatsText, { color: theme.textColor }]}>Groups</Text>
 					</View>
 				</View>
 
 				<View style={styles.trendsContainer}>
-					<Text style={styles.trendsText}>Your Mood Trends</Text>
+					<Text style={[styles.trendsText, { color: theme.textColor }]}>Your Mood Trends</Text>
 					<View style={styles.intervals}>
-						<Text style={styles.thisTexts}>This Week</Text>
+						<Text style={[styles.thisTexts, { color: theme.textColor }]}>This Week</Text>
 						<View style={styles.weekContainer}>
 							<MoodIcon style={styles.moods} size={70} happiness={'#CFEDC0'} energy={.9} anxiety={anxiety7}/>
 						</View>
 					</View>
 					<View style={styles.intervals}>
-						<Text style={styles.thisTexts}>This Month</Text>
+						<Text style={[styles.thisTexts, { color: theme.textColor }]}>This Month</Text>
 						<View style={styles.monthContainer}>
 							<MoodIcon style={styles.moods} size={70} happiness={'#FFD3B6'} energy={1} anxiety={anxiety2}/>
 						</View>
 					</View>
 					<View style={styles.intervals}>
-						<Text style={styles.thisTexts}>This Year</Text>
+						<Text style={[styles.thisTexts, { color: theme.textColor }]}>This Year</Text>
 						<View style={styles.yearContainer}>
 							<MoodIcon style={styles.moods} size={70} happiness={'#FFEBB5'} energy={1} anxiety={anxiety5}/>
 						</View>
@@ -144,7 +147,7 @@ const ProfilePage = ({screenChoose}) => {
 				</View>
 
 				<TouchableOpacity onPress={() => {screenPicker('RecentLogs')}} style={styles.logsContainer}>
-					<Text style={styles.logsText}>View Recent Logs</Text>
+					<Text style={[styles.logsText, { color: theme.textColor }]}>View Recent Logs</Text>
 				</TouchableOpacity>
 
 
