@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         margin: 10,
         width: 300,
-        backgroundColor:'lightblue'
+        backgroundColor:'#81C3D7'
     },
 	buttonMovie: {
         alignItems: 'center',
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         margin: 10,
         width: 300,
-        backgroundColor:'lightpink'
+        backgroundColor:'#D1ABAD'
     },
 	buttonBoys: {
         alignItems: 'center',
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         margin: 10,
         width: 300,
-        backgroundColor:'#97E384'
+        backgroundColor:'#2AB77C'
     },
     buttonText: {
         fontSize: 20,
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     imageStyle: {
         width: 30,
         height: 30,
+		tintColor: '#1F2532'
     }
 
 })

@@ -4,6 +4,8 @@ import styles from './proposalPopupStyles';
 import { BlurView } from 'expo-blur';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import closeIcon from '../assets/closeIcon.png';
+import CustomText from './customText';
+import CustomTextInput from './customTextInput';
  
 
 const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
@@ -39,6 +41,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 		setTime(new Date())
 		setLocation('')
 		setNotes('')
+		console.log('proposal sent')
 	}
 
 	const changeDate = () => {
@@ -63,7 +66,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 				<View style={styles.proPopupContainer}>
 					<View style={styles.popupContent}>
 						<View style={styles.headerContainer}>
-							<Text style={styles.header}>Propose Activity</Text>
+							<CustomText style={styles.header}>Propose Activity</CustomText>
 							<TouchableOpacity onPress={onClose}
 							style={styles.closeContainer}>
 								<Image
@@ -74,9 +77,9 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 						</View>
 						<View style={styles.contentContainer}>
 							<View style={styles.containers}>
-								<Text style={styles.text}>Activity</Text>
+								<CustomText style={styles.text}>Activity</CustomText>
 								<View style={styles.textView}>
-									<TextInput 
+									<CustomTextInput 
 									onChangeText={(value) => setActivity(value)}
 									value={activity}
 									style={styles.input}
@@ -84,7 +87,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 								</View>
 							</View>
 							<View style={styles.containers}>
-								<Text style={styles.text}>Time</Text>
+								<CustomText style={styles.text}>Time</CustomText>
 								<View style={styles.timetextView}>
 									<DateTimePicker style={styles.dateTime}
 									mode="time" value={time}
@@ -92,14 +95,14 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 									<TouchableOpacity 
 									onPress={changeDate}
 									style={styles.dateContainer}>
-										<Text style={styles.text}>{date}</Text>
+										<CustomText style={styles.text}>{date}</CustomText>
 									</TouchableOpacity>
 								</View>
 							</View>
 							<View style={styles.containers}>
-								<Text style={styles.text}>Location</Text>
+								<CustomText style={styles.text}>Location</CustomText>
 								<View style={styles.loctextView}>
-									<TextInput 
+									<CustomTextInput 
 									onChangeText={(value) => setLocation(value)}
 									value={location}
 									style={styles.input}
@@ -107,9 +110,9 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 								</View>
 							</View>
 							<View style={styles.notesContainer}>
-								<Text style={styles.text}>Notes</Text>
+								<CustomText style={styles.text}>Notes</CustomText>
 								<View style={styles.notestextView}>
-									<TextInput 
+									<CustomTextInput 
 									onChangeText={(value) => setNotes(value)}
 									value={notes}
 									multiline style={styles.notesInput}
@@ -120,7 +123,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 							<View style={styles.sendContainer}>
 								<TouchableOpacity onPress={sendProposal}
 								style={styles.sendProposal}>
-									<Text style={styles.sendText}>Send Proposal</Text>
+									<CustomText style={styles.sendText}>Send Proposal</CustomText>
 								</TouchableOpacity>
 							</View>
 						</View>

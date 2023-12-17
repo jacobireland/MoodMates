@@ -6,18 +6,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#5B6A91',
 	},
 
-	/*
-1c1c21
-2e3440
-0c1821
-59656f
-
-5B6A91
-
-435585
-
-	*/
-
 	appContent: {
 		marginTop: 81,
 		marginLeft: 30,
@@ -174,13 +162,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#A6CFD5',
 	},
 
-	/*
-A7CCED
-
-
-text: B9CDDA
-
-	*/
 
 	buttonText: {
 		fontSize: 20,
@@ -190,7 +171,7 @@ text: B9CDDA
 	separator: {
 		height: 70,
 		width: 1,
-		backgroundColor: '#a7cced',
+		backgroundColor: '#90C3CB',
 	},
 
 

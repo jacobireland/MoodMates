@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity} from 'react-native';
 import styles from '../style';
+import CustomText from './customText';
 
 const NavBar = ({screenChoose}) => {
 
@@ -11,17 +12,17 @@ const NavBar = ({screenChoose}) => {
 	return (
 		<View style={styles.navBar}>
 			<TouchableOpacity onPress={() => screenButton('MoodPage')} style={styles.navButtonContainer}>
-				<Text style={styles.buttonText}>Mood</Text>
+				<CustomText style={styles.buttonText}>Mood</CustomText>
 			</TouchableOpacity>
 			<View style={styles.separator}></View>
 
 			<TouchableOpacity onPress={() => screenButton('GroupsPage')} style={styles.navButtonContainer}>
-				<Text style={styles.buttonText}>Groups</Text>
+				<CustomText style={styles.buttonText}>Groups</CustomText>
 			</TouchableOpacity>
 			<View style={styles.separator}></View>
 
 			<TouchableOpacity onPress={() => screenButton('ActivitiesPage')} style={styles.navButtonContainer}>
-				<Text style={styles.buttonText}>Activities</Text>
+				<CustomText style={styles.buttonText}>Activities</CustomText>
 			</TouchableOpacity>
 			<View style={styles.separator}></View>
 

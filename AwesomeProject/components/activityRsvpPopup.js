@@ -54,7 +54,7 @@ const ActivityRsvpPopup = ({ visible, onClose, rsvpData }) => {
 							</TouchableOpacity>
 						</View>
 						<View style={styles.contentContainer}>
-							<View style={styles.firstRowContainer}>
+							<View style={styles.firstRowContainer}> 
 								<View style={styles.timeDateContainer}>
 									<View style={styles.timeDateBox}>
 										<CustomText style={styles.textTime}>Time:</CustomText>

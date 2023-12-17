@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
 		marginTop: 15,
 		marginLeft: 25,
 		fontSize: 30,
+		color: '#1F2532'
 	},
 
 	closeContainer: {
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
 		borderRadius: 25/2,
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginLeft: 87,
+		marginLeft: 55,
 		marginTop: 8
 	},
 
@@ -56,7 +57,8 @@ const styles = StyleSheet.create({
 	},
 
 	text: {
-		fontSize: 18
+		fontSize: 18,
+		color: '#1F2532'
 	},
 
 	containers: {
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		padding: 4,
-		marginLeft: 21
+		marginLeft: 17
 	},
 
 	timetextView: {
@@ -101,19 +103,18 @@ const styles = StyleSheet.create({
 	dateContainer: {
 		marginLeft: 15,
 		justifyContent: 'center',
-		alignItems: 'flex-start',
+		alignItems: 'center',
 		height: 35,
 		width: 112,
 		borderRadius: 8,
 		backgroundColor: '#eeeeef',
-		paddingLeft: 10
 	},
 
 	notesContainer: {
 		flexDirection: 'row',
 		height: 100,
 		alignItems: 'stretch',
-		marginBottom: 32,
+		marginBottom: 33,
 		width: '100%',
 	},
 
@@ -131,24 +132,23 @@ const styles = StyleSheet.create({
 	},
 
 	sendProposal: {
-		width: 130,
+		width: 145,
 		height: '100%',
 		justifyContent: 'center',
 		alignItems: 'center',
-		borderColor: 'black',
-		borderWidth: 1,
 		borderRadius: 4,
 		backgroundColor: '#8BC7AF',
 	},
 
 	sendContainer: {
-		height: 30,
+		height: 33,
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
 
 	sendText: {
-		fontSize: 18
+		fontSize: 18,
+		color: '#1F2532'
 	},
 
 

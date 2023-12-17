@@ -3,7 +3,6 @@ import { View, Text, Modal, TextInput, Button, StyleSheet } from 'react-native';
 import styles from '../style';
 import { BlurView } from 'expo-blur';
 import Backendless from 'backendless';
-import CustomText from './customText';
 
 Backendless.initApp('9876ED6D-2CDD-4E20-FFF1-E18BFE7CC800', 'AA654184-A2EF-478D-877D-C1B9B6BE4759');
 

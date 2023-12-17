@@ -17,7 +17,10 @@ import anxiety8 from '../assets/Anxiety9.png';
 import addIcon from '../assets/addIcon.png';
 import CustomText from './customText.js';
 
+
+
 const GroupPage = ({screenChoose}) => {
+
 
 const [userAnxiety, setUserAnxiety] = React.useState(anxiety4)
 
@@ -72,6 +75,7 @@ const setUserMood = (userMood) => {
 Backendless.Data.of('UserMood').findLast()
 	.then(setUserMood)
 	.catch(onError)
+	console.log('using backendless')
 
 const [anxiety, setAnxiety] = React.useState(anxiety4)
 
@@ -92,7 +96,7 @@ const oliviaMoodIcon = (
 
 const oliviaText = (
     <View style={groupStyles.moodIconTextContainer}>
-      <CustomText style={groupStyles.oliviaMoodIconText }>Olivia</CustomText>
+      <CustomText style={groupStyles.oliviaMoodIconText}>Olivia</CustomText>
     </View>
 );
 
@@ -100,8 +104,8 @@ const benMoodIcon = (
     <View style={groupStyles.benMoodIconContainer}>
         <MoodIcon
             size={85}
-            happiness="#DCECD1"  
-            energy={0.2}         
+            happiness="#DCECD1"
+            energy={0.4}         
             anxiety={anxiety2}   
         />
     </View>  
@@ -109,7 +113,7 @@ const benMoodIcon = (
 
 const benText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.benMoodIconText }>Ben</CustomText>
+        <CustomText style={groupStyles.benMoodIconText}>Ben</CustomText>
     </View>
 );
 
@@ -126,7 +130,7 @@ const justinMoodIcon = (
 
 const justinText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.justinMoodIconText }>Justin</CustomText>
+        <CustomText style={groupStyles.justinMoodIconText}>Justin</CustomText>
     </View>
 );
 
@@ -143,7 +147,7 @@ const jacobMoodIcon = (
 
 const jacobText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.jacobMoodIconText }>Jacob</CustomText>
+        <CustomText style={groupStyles.jacobMoodIconText}>Jacob</CustomText>
     </View>
 );
 
@@ -152,7 +156,7 @@ const mayaMoodIcon = (
         <MoodIcon
             size={85}
             happiness="#FF7480"  
-            energy={0.3}         
+            energy={0.4}         
             anxiety={anxiety2}   
         />
     </View>  
@@ -160,7 +164,7 @@ const mayaMoodIcon = (
 
 const mayaText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.mayaMoodIconText }>Maya</CustomText>
+        <CustomText style={groupStyles.mayaMoodIconText}>Maya</CustomText>
     </View>
 );
 
@@ -169,7 +173,7 @@ const anishMoodIcon = (
         <MoodIcon
             size={85}
             happiness="#FFD3B6"  
-            energy={0.9}         
+            energy={1}         
             anxiety={anxiety6}   
         />
     </View>  
@@ -177,7 +181,7 @@ const anishMoodIcon = (
 
 const anishText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.anishMoodIconText }>Anish</CustomText>
+        <CustomText style={groupStyles.anishMoodIconText}>Anish</CustomText>
     </View>
 );
 
@@ -186,7 +190,7 @@ const charlieMoodIcon = (
         <MoodIcon
             size={85}
             happiness="#97E384"  
-            energy={0.4}         
+            energy={1}         
             anxiety={anxiety0}   
         />
     </View>  
@@ -194,7 +198,7 @@ const charlieMoodIcon = (
 
 const charlieText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.charlieMoodIconText }>Charlie</CustomText>
+        <CustomText style={groupStyles.charlieMoodIconText}>Charlie</CustomText>
     </View>
 );
 
@@ -211,7 +215,7 @@ const myMoodIcon = (
 
 const myText = (
     <View style={groupStyles.moodIconTextContainer}>
-        <CustomText style={groupStyles.myMoodIconText }>Me</CustomText>
+        <CustomText style={groupStyles.myMoodIconText}>Me</CustomText>
     </View>
 );
 
@@ -220,14 +224,14 @@ return (
 
         <View style={groupStyles.headerContainer}>
 				<TouchableOpacity onPress={() => screenChoose('GroupsPage')}>
-                	<Image source={backArrowIcon} style={groupStyles.icon } />
+                	<Image source={backArrowIcon} style={groupStyles.icon} />
 				</TouchableOpacity>
-                <CustomText style={groupStyles.headerText }>Movie Squad</CustomText>
-                <Image source={settingsIcon} style={groupStyles.Icon } />
+                <CustomText style={groupStyles.headerText}>Movie Squad</CustomText>
+                <Image source={settingsIcon} style={groupStyles.icon} />
         </View>
 
         <View style={groupStyles.rectangle}>
-                <CustomText style={groupStyles.groupMoodText }>Group's Current Mood</CustomText>
+                <CustomText style={groupStyles.groupMoodText}>Group's Current Mood</CustomText>
                 <View style={groupStyles.moodIconContainer}>
                     <MoodIcon size={65} happiness={happiness} energy={energy} anxiety={anxiety}/>
                 </View>
