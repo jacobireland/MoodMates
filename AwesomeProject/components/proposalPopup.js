@@ -32,7 +32,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 
 	const [date, setDate] = useState('Today')
 
-	//activates when x-icon is pressed
+	//activates when send button is pressed
 	const sendProposal = () => {
 
 		proposedActivity(activity, date, time, location, notes)
@@ -79,7 +79,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 							<View style={styles.containers}>
 								<CustomText style={styles.text}>Activity</CustomText>
 								<View style={styles.textView}>
-									<CustomTextInput 
+									<TextInput 
 									onChangeText={(value) => setActivity(value)}
 									value={activity}
 									style={styles.input}
@@ -102,7 +102,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 							<View style={styles.containers}>
 								<CustomText style={styles.text}>Location</CustomText>
 								<View style={styles.loctextView}>
-									<CustomTextInput 
+									<TextInput 
 									onChangeText={(value) => setLocation(value)}
 									value={location}
 									style={styles.input}
@@ -112,7 +112,7 @@ const ProposalPopup = ({ visible, onClose, proposedActivity }) => {
 							<View style={styles.notesContainer}>
 								<CustomText style={styles.text}>Notes</CustomText>
 								<View style={styles.notestextView}>
-									<CustomTextInput 
+									<TextInput 
 									onChangeText={(value) => setNotes(value)}
 									value={notes}
 									multiline style={styles.notesInput}

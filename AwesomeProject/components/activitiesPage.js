@@ -68,6 +68,10 @@ const ActivitiesPage = () => {
 
 	const [myProposals, setMyProposals] = React.useState([<CustomText key={'noproposals'} style={styles.noActivity}>No Proposals!</CustomText>])
 
+	const initialProposalsState = React.useState([<CustomText key={'noproposals'} style={styles.noActivity}>No Proposals!</CustomText>])
+
+	const [proposals, setProposals] = React.useState(false)
+
 	const showProposals = () => {
 		return myProposals
 	}
@@ -78,6 +82,8 @@ const ActivitiesPage = () => {
 	}
 
 	const proposedActivity = (activity, date, time, location, notes) => {
+
+		console.log("\n\n proposed activity: ", activity)
 
 		if (activity) {
 
@@ -110,18 +116,16 @@ const ActivitiesPage = () => {
 				)
 			}
 
-			
-			if (myProposals.length === 1 && myProposals[0].props.style === styles.noActivity) {
-				console.log("YAHHHHH")
-				setMyProposals(proposalObject)
+
+			if (!proposals) {
+				setMyProposals(proposalObject())
 			}
 			else {
 				setMyProposals((prevProposals) => [...prevProposals, proposalObject()]);
 			}
 
 			saveToBackend(activity, date, time, location, notes)
-
-			console.log(myProposals)
+			setProposals(true)
 
 		}
 	}
