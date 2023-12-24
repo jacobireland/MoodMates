@@ -1,5 +1,12 @@
-# UI-Proj
-UI Design Fall '23 Semester Project Team 20 - MoodMates
+MoodMates
+
+This React Native code is for a mobile app called MoodMates. Myself and my team created this for our 4000 level UI Design class during our
+Fall '23 semester at Columbia University. Our app targets users/students who are mood concious and struggle to socialize with others
+in a way that matches their social battery and makes them feel comfortable. We decided to implement an app that allows users to track their
+daily mood and see their friends daily moods, and use this information to propose activities/hangouts with each other. Currently, our app is
+not 100% functional, but every element that is necessary for navigating and testing/demoing the app is fully implemented. If you would like
+to run and use the app, please follow the Getting Started instructions below.
+
 
 **Getting Started**
 
@@ -14,9 +21,6 @@ UI Design Fall '23 Semester Project Team 20 - MoodMates
 	npm i react-native-global-props --save
 	npx react-native-asset
 	npm install expo-font
-
-
-	*****npx expo install --fix****
 
 5) Download the Expo Go app on your phone (!!make sure phone and computer are connected to the same wifi network!!)
 
@@ -49,10 +53,7 @@ to the class are entirely working and effective. You are able to select any page
 		Click the plus in the top right. Enter some information, and click save - you should see a new proposal generate under the 'My Proposals' tab containing the information you just entered. Of course, you're RSVPed to your own event, and this is unchangeable. Add as many proposals as you'd like!
 
 	
-	That's our app! We coded it using React Native (a version of React meant for mobile applications) and for our backend, becuase Flask is quite difficult to connect with React Native, we used Backendless. Currently, there are a few minor pages/functions we plan to add before the demo (stated in the write up above) as well as extra backend implementation for a few small features that to not remain consistent between pages.
-
-	We also plan to change our app colors before the demo - they did not show up in implementation as planned.
-
+	That's our app! We coded it using React Native and for our backend we used Backendless. Currently, there are a few minor pages/functions that are not fully functional, and if we decide to contine working on this project further we will implement them.
 
 
 **Sources**
@@ -61,7 +62,6 @@ to the class are entirely working and effective. You are able to select any page
 	For creating pop-up modal for diary text and other popups: https://blog.logrocket.com/creating-a-pop-up-modal-in-react-native/
 
 	For creating sliders on Mood page: https://www.npmjs.com/package/react-native-sliders
-
 
 	For creating Recent Logs: https://stackoverflow.com/questions/50556937/how-do-i-make-text-bold-italic-or-underline-in-react-native
 
