@@ -66,3 +66,4 @@ to the class are entirely working and effective. You are able to select any page
 	For creating Recent Logs: https://stackoverflow.com/questions/50556937/how-do-i-make-text-bold-italic-or-underline-in-react-native
 
 	For creating card deck: https://www.codedaily.io/tutorials/Create-a-Draggable-Card-with-React-Native-Pan-Responder-and-Animateddecay
+# MoodMates
